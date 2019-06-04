@@ -5,6 +5,9 @@ import numpy as np
 import torch
 
 def process_confusion_matrix(matrix, n_class, gt):
+    # plt.imshow(matrix)
+    # # plt.gray()
+    # plt.show()
 
     matrix = np.reshape(matrix, (n_class * sum(gt)))
 
@@ -23,6 +26,17 @@ def process_confusion_matrix(matrix, n_class, gt):
     labels = np.reshape(labels, (n_class * sum(gt)))
     fpr, tpr, _ = roc_curve(labels, matrix)
     roc_auc = auc(fpr, tpr)
+
+    # plt.title('MRCNN-V2')
+    # plt.plot(fpr, tpr, 'b', label='AUC = %0.3f' % roc_auc)
+    # plt.legend(loc='lower right')
+    # plt.plot([0, 1], [0, 1], 'r--')
+    # plt.xlim([0, 1])
+    # plt.ylim([0, 1])
+    # plt.ylabel('True Positive Rate')
+    # plt.xlabel('False Positive Rate')
+    # plt.show()
+
 
     return fpr, tpr, roc_auc
 
@@ -76,9 +90,6 @@ def calculate_identication_rate_single(glrs, aprb, trueid, rank=1):
 
 def eval_lstm_roc(glr, prb, gt, n_test, networks, opt):
     netE, lstm = networks
-    def calculate_cosine_similarity(a, b):
-        score = 1 - spatial.distance.cosine(a, b)
-        return score
 
     fg_glr = [netE(glr[i].cuda())[1].detach() for i in range(len(glr))]
     fg_glr = torch.stack(fg_glr, 0).view(len(fg_glr), n_test, opt.fg_dim)
@@ -97,7 +108,7 @@ def eval_lstm_roc(glr, prb, gt, n_test, networks, opt):
                                              prb_vec[j:j + 1, :])
             obj_arr[j, i] = cs
     fpr, tpr, roc_auc = process_confusion_matrix(obj_arr, n_test, gt)
-    return find_idx(fpr, tpr)
+    return find_idx(fpr, tpr) #, obj_arr
 
 
 def eval_lstm_cmc(glr, prb, networks, opt):
