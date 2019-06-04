@@ -80,7 +80,7 @@ class MRCNN():
         width = height // 2
         return frame[:,y0:y0+height, x_c - width // 2:x_c - width // 2 + width] # maybe empty if subject too close to boundry
 
-    def process_batch(self,batch,threshold,top_num,out_of_frame_space):
+    def process_batch(self,batch,threshold,top_num,out_of_frame_space, dataset):
         result_filtered = []
         segmentations_full = []
         silhouettes_full = []
@@ -105,13 +105,23 @@ class MRCNN():
             silhouette_ = self.__bbox_crop(silhouette,box)
             crop = self.__bbox_crop(img,box)
 
-            if self.cont:
+
+            if dataset == 'FVG':
+                if self.cont:
+                    if not self.__out_of_frame(silhouette,out_of_frame_space):
+                            segmentations_part.append(segmentation_)
+                            silhouettes_part.append(silhouette_)
+                            crops_part.append(crop)
+                    else:
+                        self.cont = False
+            elif dataset in ['CB', 'USF']:
+                # if self.cont:
                 if not self.__out_of_frame(silhouette,out_of_frame_space):
                         segmentations_part.append(segmentation_)
                         silhouettes_part.append(silhouette_)
                         crops_part.append(crop)
-                else:
-                    self.cont = False
+                    # else:
+                    #     self.cont = False
 
         return segmentations_part, silhouettes_part, crops_part
 
