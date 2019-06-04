@@ -1,4 +1,4 @@
-# GaitNet-Demo
+# GaitNet-CVPR2019
 
 MRCNN: TORCHVISION
 
@@ -11,4 +11,3 @@ IMAGE PROCESSING: PIL, TORCHVISION
     3. threading data loader
     4. more effective algorithm to remove redundant data(out of frame)
 
-# GaitNet-CVPR2019

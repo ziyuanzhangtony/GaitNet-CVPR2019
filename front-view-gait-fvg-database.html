@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title> Front-View Gait(FVG) Database </title>
+    <link rel="stylesheet" href="http://cvlab.cse.msu.edu/theme/css/main.css"/>
+    <link rel="stylesheet" href="http://cvlab.cse.msu.edu/theme/css/jquery.fancybox.css" type="text/css"
+          media="screen"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript"
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://cvlab.cse.msu.edu/theme/js/jquery.fancybox.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("a.fancybox").fancybox();
+        });
+    </script>
+    <!--[if IE]>
+    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body id="index" class="home">
+<div id="msu-banner">
+    <div class="container">
+        <div id="logo">
+            <a href="http://cvlab.cse.msu.edu/">Computer Vision Lab</a>
+        </div>
+        <div id="msu-masthead" role="banner">
+            <a href="http://www.msu.edu">
+                <img class="screen-msugraphic" alt="Michigan State University masthead graphic"
+                     src="http://cvlab.cse.msu.edu/images/masthead-helmet-white.png"/>
+                <img class="print-msugraphic" alt="Michigan State University masthead graphic"
+                     src="http://cvlab.cse.msu.edu/images/masthead-helmet-black.png"/>
+            </a>
+        </div>
+    </div>
+</div>
+<header id="banner">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="http://cvlab.cse.msu.edu/">Home</a></li>
+                <li><a href="http://cvlab.cse.msu.edu/pages/people.html">People</a></li>
+
+                <li><a href="http://cvlab.cse.msu.edu/category/research.html">Research</a></li>
+                <li><a href="http://cvlab.cse.msu.edu/category/publications.html">Publications</a></li>
+                <li class="active"><a href="http://cvlab.cse.msu.edu/category/downloads.html">Downloads</a></li>
+                <li><a href="http://cvlab.cse.msu.edu/pages/lab-fun.html">Lab Fun</a></li>
+                <li><a href="http://cvlab.cse.msu.edu/pages/contact.hl">Contact</a></li>
+            </ul>
+        </nav>
+    </div><!-- /.container -->
+</header><!-- /#banner -->
+
+<div class="container">
+    <div id="content">
+        <article>
+            <header class="post-info">
+                <h1 class="entry-title">
+                    <a href="http://cvlab.cse.msu.edu/front-view-gait-fvg-database.html" rel="bookmark"
+                       title="Permalink to front View Gait(FVG) Database "> Front-View Gait(FVG) Database </a>
+                </h1>
+                <a href="http://cvlab.cse.msu.edu/author/ziyuan-zhang.html">Ziyuan Zhang</a>,
+                <a href="http://cvlab.cse.msu.edu/author/luan-tran.html">Luan Tran</a>,
+                <a href="http://cvlab.cse.msu.edu/author/xi-yin.html">Xi Yin</a>,
+                <a href="http://cvlab.cse.msu.edu/author/yousef-atoum.html">Yousef Atoum</a>,
+                <a href="http://cvlab.cse.msu.edu/author/xiaoming-liu.html">Xiaoming Liu </a>,
+                <a href="http://cvlab.cse.msu.edu/author/jian-wan.html">Jian Wan </a>,
+                <a href="http://cvlab.cse.msu.edu/author/nanxin-wang.html">Nanxin Wang </a>
+                <p>Keywords: <a href="http://cvlab.cse.msu.edu/tag/gait-recognition.html">Gait Recognition</a></p>
+            </header>
+
+            <div class="entry-content">
+                <p>Compare to other view angles in gait recognition, frontal-view walking is a more challenging
+                    problem since it contains minimal gait cues.
+                    To facilitate this research, we collect the Front-View Gait (FVG) database in
+                    the course of two years, 2017 and 2018.
+                    FVG includes significant variations, e.g., walking speed, carrying, and clothing from frontal view
+                    angles.</p>
+                <h2>Overview Discrption</h2>
+                <p> FVG provides frontal walking videos from 226 subjects. In addition, 12 of them were collected twice
+                    from the year 2017 and 2018, in total 2,856 videos. The videos were captured by the camera Logitech
+                    C920 Pro Webcam or GoPro Hero 5 on a tripod at the height of 1.5 meters at 1, 080 × 1, 920
+                    resolution with the average length of 10 seconds.
+                    More details can be found in our paper <a
+                            href="http://cvlab.cse.msu.edu/pdfs/Zhang_Tran_Yin_Atoum_Liu_Wan_Wang_CVPR2019.pdf">section
+                        4</a>.</p>
+                <div class="figure">
+                    <img alt="Overview Example" src="http://cvlab.cse.msu.edu/images/gaitnet/fig-fvg-dataset.png" style="width: 500px;"/>
+                    <p class="caption" align="left">Figure 1: Examples of FVG Dataset. (a) Samples of the near frontal middle, left
+                        and right walking view angles in session 1 (SE1) of the first subject (S1). SE3-S1 is the same
+                        subject in session 3. (b) Samples of slow and fast walking speed for another subject in session
+                        1. Frames in top red boxes are slow and in the bottom red box are fast walking. Carrying bag
+                        sample is shown below. (c) samples of changing clothes and with cluttered background from one
+                        subject in session 2.</p>
+                </div>
+
+                <h2>Session Details</h2>
+
+                <p> FVG is collected in three sessions. In session 1, in 2017, videos from 147 subjects(#1 to 147) are collected with
+                four variations (normal walking, slow walking, fast walking, and carrying status). In session 2, in
+                2018, videos from additional 79 subjects(#148 to 226) are collected. Variations are normal, slow or fast walking
+                speed, clothes or shoes change, and twilight or cluttered backgrounds. Finally, in session 3, we collect
+                repeated 12 subjects(#1,2,4,7,8,12,13,17,31,40,48,77) in the year 2018 for the extreme challenging test with the same setup as section 1.
+                The purpose is to test how time gaps affect gait, along with changes in clothes/shoes or walking speed. </p>
+
+                <div class="figure">
+                    <img alt="Session Details" src="http://cvlab.cse.msu.edu/images/fvg/session-details.png" style="width: 500px;"/>
+                    <p class="caption">Figure 2: Session arrangement details of FVG.</p>
+                </div>
+
+
+
+                <h2>Files and Naming</h2>
+                <p>All the video files are released as PNG frames, named as frame index, .e.g. 00010.png as frame number 10.
+                    Each video folder is named as <strong>SubjectID</strong>_<strong>VideoIndex</strong>. SubjectID ranges from
+                        001 to 226. VideoIndex always ranges from 01 to 12. There are three folders session1, session2
+                        and session3. Session 1 contains subjects 1 to 147; session 2 contains and session 3 contains
+                        the repeated 12 subjects.
+                </p>
+
+
+                <pre>
+                                        Dataset structure of FVG:
+
+                                            session1
+                                                -001_01
+                                                    -00001.png
+                                                    ...
+                                                    -0000x.png
+                                                -001_02
+                                                ...
+                                                -147_12
+
+                                            session2
+                                                -148_01
+                                                -148_02
+                                                ...
+                                                -226_12
+
+                                            session3
+                                                -001_01
+                                                -001_02
+                                                ...
+                                                -077_12
+                </pre>
+
+                <h2>Evaluation Protocols</h2>
+                <p>Evaluation protocols can be found in our paper <a
+                        href="http://cvlab.cse.msu.edu/pdfs/Zhang_Tran_Yin_Atoum_Liu_Wan_Wang_CVPR2019.pdf">section
+                    4</a>.
+                </p>
+                <h2>Download</h2>
+
+                <p><a href="https://github.com/ziyuanzhangtony/GaitNet-CVPR2019/blob/master/dataset/FVG/download.py">This
+                    code </a> will set up everything including downloading and unzipping.</p>
+
+                <p>
+                    For more details, please refer to <a href=
+                "https://github.com/ziyuanzhangtony/GaitNet-CVPR2019/tree/master/dataset/FVG">this page</a>
+                </p>
+
+
+
+
+
+            </div><!-- /.entry-content -->
+
+            <h2>Publications</h2>
+            <ul class="publication-list">
+                <li>
+                    <strong>Gait Recognition via Disentangled Representation Learning</strong><br />
+                    <a href="http://cvlab.cse.msu.edu/author/ziyuan-zhang.html">Ziyuan Zhang</a>,        <a href="http://cvlab.cse.msu.edu/author/luan-tran.html">Luan Tran</a>,        <a href="http://cvlab.cse.msu.edu/author/xi-yin.html">Xi Yin</a>,        <a href="http://cvlab.cse.msu.edu/author/yousef-atoum.html">Yousef Atoum</a>,        <a href="http://cvlab.cse.msu.edu/author/jian-wan.html">Jian Wan</a>,        <a href="http://cvlab.cse.msu.edu/author/nanxin-wang.html">Nanxin Wang</a>,        <a href="http://cvlab.cse.msu.edu/author/xiaoming-liu.html">Xiaoming Liu</a><br />
+                    In Proceeding of IEEE Computer Vision and Pattern Recognition (CVPR 2019), Long Beach, CA, Jun. 2019
+                    (Oral presentation)
+                    <br />
+                    <a class="fancybox" href="#bibtex-gait-recognition-via-disentangled-representation-learning">Bibtex</a>
+                    | <a href="http://cvlab.cse.msu.edu/pdfs/Zhang_Tran_Yin_Atoum_Liu_Wan_Wang_CVPR2019.pdf">PDF</a>
+                    | <a href="https://arxiv.org/abs/1904.04925">arXiv</a>
+                </li>
+                <div style="display: none;"><div class="bibtex" id="bibtex-gait-recognition-via-disentangled-representation-learning">
+                    @inproceedings{ gait-recognition-via-disentangled-representation-learning, <br />
+                    &nbsp;&nbsp;author = { Ziyuan Zhang and Luan Tran and Xi Yin and Yousef Atoum and Jian Wan and Nanxin Wang and Xiaoming Liu },<br />
+                    &nbsp;&nbsp;title = { Gait Recognition via Disentangled Representation Learning },<br />
+                    &nbsp;&nbsp;booktitle = { In Proceeding of IEEE Computer Vision and Pattern Recognition },<br />
+                    &nbsp;&nbsp;address = { Long Beach, CA },<br />
+                    &nbsp;&nbsp;month = { June },<br />
+                    &nbsp;&nbsp;year = { 2019 },<br />
+                    }
+                </div></div>  </ul>
+
+
+        </article>
+    </div>
+</div>
+
+</body>
+</html>
