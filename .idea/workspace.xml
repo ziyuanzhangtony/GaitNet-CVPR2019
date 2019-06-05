@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c216388-1101-4dd6-ad65-d69d4f88744f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-view-gait-fvg-database.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/inference/gaitnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/inference/FVG/gaitnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/inference/model.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/inference/FVG/model.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/testing_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/testing_writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/train_cropped_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cropped_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/train_cvl1_test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/train_cvl1_test6.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/train_cvl1_test7.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/train_cvl1_test8_256128.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test8_256128.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/train_cvl1_test8_cudnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test8_cudnn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,51 +25,7 @@
     <favorites_list name="GaitNet" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaitnet/train/train6_test_V2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1482">
-              <caret line="859" column="23" selection-start-line="859" selection-start-column="23" selection-end-line="859" selection-end-column="23" />
-              <folding>
-                <element signature="e#36#49#0" expanded="true" />
-                <element signature="e#18005#18292#0" />
-                <element signature="e#18678#18980#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/FVG/extract.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataset/FVG/download.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="15">
-                <caret line="1" selection-start-line="1" selection-end-line="1" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -103,16 +67,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../train6_test_V2.py" />
+        <option value="$USER_HOME$/train6_test_V2.py" />
         <option value="$PROJECT_DIR$/segmentation/mrcnn-resnet50-fpn.py" />
         <option value="$PROJECT_DIR$/segmentation/helper.py" />
         <option value="$PROJECT_DIR$/segmentation/test.py" />
         <option value="$PROJECT_DIR$/segmentation/deeplabv3_resnet101.py" />
         <option value="$PROJECT_DIR$/segmentation/frcnn_resnet50_fpn.py" />
         <option value="$PROJECT_DIR$/detection/fvg.py" />
-        <option value="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" />
         <option value="$PROJECT_DIR$/utils/helper.py" />
-        <option value="$PROJECT_DIR$/segmentation/fvg.py" />
         <option value="$PROJECT_DIR$/utils/compute.py" />
         <option value="$PROJECT_DIR$/dataset/FVG/compression.py" />
         <option value="$PROJECT_DIR$/dataset/FVG/extract.py" />
@@ -121,13 +83,17 @@
         <option value="$PROJECT_DIR$/dataset/FVG/download.py" />
         <option value="$PROJECT_DIR$/gaitnet/train/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" />
+        <option value="$PROJECT_DIR$/segmentation/fvg-cb.py" />
+        <option value="$PROJECT_DIR$/segmentation/fvg.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="907" />
-    <option name="width" value="1013" />
-    <option name="height" value="1044" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="y" value="-2" />
+    <option name="width" value="1920" />
+    <option name="height" value="1082" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -135,23 +101,42 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="GaitNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet" type="462c0819:PsiDirectoryNode" />
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="GaitNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet" type="462c0819:PsiDirectoryNode" />
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
               <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="inference" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="FVG" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,16 +148,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gaitnet/train" />
-      <recent name="$PROJECT_DIR$/gaitnet/inference" />
-      <recent name="$PROJECT_DIR$/gaitnet" />
-      <recent name="$PROJECT_DIR$/segmentation" />
-      <recent name="$PROJECT_DIR$/detection" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/segmentation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gaitnet/inference/FVG" />
+      <recent name="$PROJECT_DIR$/gaitnet/train/FVG" />
+      <recent name="$PROJECT_DIR$/gaitnet/train" />
+      <recent name="$PROJECT_DIR$/gaitnet/inference" />
+      <recent name="$PROJECT_DIR$/gaitnet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -187,7 +172,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.train6_test_V2">
+  <component name="RunManager" selected="Python.fvg-cb">
     <configuration name="compression" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GaitNet" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -232,6 +217,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="fvg-cb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GaitNet" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/segmentation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/segmentation/fvg-cb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="fvg" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="GaitNet" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -246,28 +253,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/segmentation/fvg.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
-      <module name="GaitNet" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/segmentation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/segmentation/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -299,19 +284,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.fvg" />
       <item itemvalue="Python.train6_test_V2" />
       <item itemvalue="Python.compression" />
       <item itemvalue="Python.extract" />
+      <item itemvalue="Python.fvg-cb" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.fvg-cb" />
         <item itemvalue="Python.train6_test_V2" />
         <item itemvalue="Python.extract" />
         <item itemvalue="Python.compression" />
         <item itemvalue="Python.fvg" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -326,37 +311,38 @@
       <option name="presentableId" value="Default" />
       <updated>1559241590617</updated>
       <workItem from="1559241593219" duration="94091000" />
+      <workItem from="1559620865521" duration="1315000" />
+      <workItem from="1559622415134" duration="9614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94091000" />
+    <option name="totallyTimeSpent" value="105020000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="907" y="0" width="1013" height="1044" extended-state="0" />
-    <editor active="true" />
+    <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
     <layout>
-      <window_info id="Favorites" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.33472368" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.178762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32969433" />
-      <window_info anchor="bottom" id="Python Console" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32751092" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
+      <window_info id="Favorites" order="2" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.3286026" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39782608" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.32843652" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3976915" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" weight="0.32967034" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32969433" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.31479537" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32967034" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
@@ -391,42 +377,14 @@
     <SUITE FILE_PATH="coverage/GaitNet$test.coverage" NAME="test Coverage Results" MODIFIED="1559343781780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
     <SUITE FILE_PATH="coverage/GaitNet$extract.coverage" NAME="extract Coverage Results" MODIFIED="1559589995872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
     <SUITE FILE_PATH="coverage/GaitNet$fvg.coverage" NAME="fvg Coverage Results" MODIFIED="1559438321737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
+    <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$fvg_cb.coverage" NAME="fvg-cb Coverage Results" MODIFIED="1559758245795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
     <SUITE FILE_PATH="coverage/GaitNet$compression.coverage" NAME="compression Coverage Results" MODIFIED="1559586790622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../version_dev03/utils/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/mrcnn-resnet50-fpn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../train6_test_V2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#644#12991#0" />
-            <element signature="e#13023#18484#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../version_dev02/mrcnn/process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1165" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../version_dev03/utils/helper.py" />
+    <entry file="file://$PROJECT_DIR$/segmentation/mrcnn-resnet50-fpn.py" />
+    <entry file="file://$USER_HOME$/train6_test_V2.py" />
+    <entry file="file://$PROJECT_DIR$/../version_dev02/mrcnn/process.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/tensor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -434,9 +392,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/helper.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/segmentation/helper.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torchvision/models/detection/transform.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -451,38 +407,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/out.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/test.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../version_dev02/mrcnn/predictor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="393" column="48" lean-forward="true" selection-start-line="387" selection-start-column="8" selection-end-line="393" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#326#1137#0" />
-            <element signature="e#2211#2297#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/deeplabv3_resnet101.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="87" column="14" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/segmentation/out.png" />
+    <entry file="file://$PROJECT_DIR$/segmentation/test.jpeg" />
+    <entry file="file://$PROJECT_DIR$/../version_dev02/mrcnn/predictor.py" />
+    <entry file="file://$PROJECT_DIR$/segmentation/test.py" />
+    <entry file="file://$PROJECT_DIR$/segmentation/deeplabv3_resnet101.py" />
     <entry file="file://$PROJECT_DIR$/segmentation/frcnn_resnet50_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -497,14 +426,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn_bkup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/inference/gaitnet.py">
+    <entry file="file://$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn_bkup.py" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/inference/FVG/gaitnet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="189" column="18" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
@@ -520,30 +443,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detection/fvg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="30" selection-start-line="30" selection-end-line="54" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/detection/fvg.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="807" selection-start-line="807" selection-end-line="807" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="112" column="21" lean-forward="true" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -590,20 +494,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/CB/MAIN-CB/train_3264_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="150" column="55" lean-forward="true" selection-start-line="144" selection-start-column="8" selection-end-line="150" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/FVG/MAIN-FVG/train_3264_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="973" column="51" lean-forward="true" selection-start-line="970" selection-start-column="8" selection-end-line="973" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/CB/MAIN-CB/train_3264_demo.py" />
+    <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/FVG/MAIN-FVG/train_3264_test.py" />
     <entry file="file://$USER_HOME$/anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/nn/modules/conv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -646,16 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/segmentation/fvg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="37" selection-start-line="12" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/compute.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
@@ -683,21 +565,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/inference.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/train6_test_V2.py">
+    <entry file="file://$PROJECT_DIR$/gaitnet/inference.py" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/train6_test_V2.py" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1482">
-          <caret line="859" column="23" selection-start-line="859" selection-start-column="23" selection-end-line="859" selection-end-column="23" />
-          <folding>
-            <element signature="e#36#49#0" expanded="true" />
-            <element signature="e#18005#18292#0" />
-            <element signature="e#18678#18980#0" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dataset-fvg.md" />
     <entry file="file://$PROJECT_DIR$/dataset/FVG/extract.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -708,17 +585,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataset-fvg.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="120">
+            <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
@@ -726,13 +598,54 @@
     <entry file="file://$PROJECT_DIR$/dataset/FVG/download.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="15">
-            <caret line="1" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$USER_HOME$/anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/torchvisiontest/lib/python3.7/multiprocessing/process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/GaitNet/PRODUCT/GaitNet_DEV/version_dev01/gui_root.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="39" column="67" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segmentation/fvg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segmentation/fvg-cb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
