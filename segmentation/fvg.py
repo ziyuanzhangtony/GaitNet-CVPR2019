@@ -7,8 +7,6 @@ from torch.utils.data import DataLoader
 import numpy as np
 from segmentation.mrcnn_resnet50_fpn import MRCNN
 from torchvision import transforms
-import torch.backends.cudnn as cudnn
-
 # ========================================================================
 in_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG/RAW/'
 seg_out_data_root = '/home/tony/Research/NEW-MRCNN___/SEG/'
@@ -17,7 +15,6 @@ crop_out_data_root = '/home/tony/Research/NEW-MRCNN___/CROP/'
 # out_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG/SEG/'
 
 if_gpu = True
-cudnn.benchmark = True
 torch.cuda.set_device(0)
 # os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 

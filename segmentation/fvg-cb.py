@@ -10,9 +10,9 @@ from torchvision import transforms
 import cv2
 # ========================================================================
 in_data_root = '/home/tony/Documents/CASIA-B/videos'
-seg_out_data_root = '/home/tony/Documents/CASIA-B/SEG/'
-sil_out_data_root = '/home/tony/Documents/CASIA-B/SIL/'
-crop_out_data_root = '/home/tony/Documents/CASIA-B/CROP/'
+seg_out_data_root = '/home/tony/Documents/CASIA-B-/SEG/'
+sil_out_data_root = '/home/tony/Documents/CASIA-B-/SIL/'
+crop_out_data_root = '/home/tony/Documents/CASIA-B-/CROP/'
 # out_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG/SEG/'
 
 if_gpu = True
@@ -97,7 +97,7 @@ def fvg_save_processed_frames(in_path, seg_out_path, sil_out_path, crop_out_path
                 batch_frame = batch_frame.cuda()
             batch_frame = pre_process_batch(batch_frame)
             start = time.time()
-            segmentations, silhouettes, crops = mrcnn.process_batch(batch_frame, 0.9, 1, 3)
+            segmentations, silhouettes, crops = mrcnn.process_batch(batch_frame, 0.9, 1, 3, 'CB')
             print( len(batch_frame)/(time.time()-start) )
 
             for segmentation,silhouette,crop,file_name in zip(segmentations, silhouettes, crops, batch_frame_names):

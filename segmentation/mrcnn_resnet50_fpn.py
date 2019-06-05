@@ -1,5 +1,7 @@
 import torchvision
 import torch
+import torch.backends.cudnn as cudnn
+cudnn.benchmark = True
 
 
 class MRCNN():
