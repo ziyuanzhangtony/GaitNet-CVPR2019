@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 import numpy as np
 from segmentation.mrcnn_resnet50_fpn import MRCNN
 from torchvision import transforms
+import torch.backends.cudnn as cudnn
 
 # ========================================================================
 in_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG/RAW/'
@@ -16,7 +17,9 @@ crop_out_data_root = '/home/tony/Research/NEW-MRCNN___/CROP/'
 # out_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG/SEG/'
 
 if_gpu = True
-os.environ["CUDA_VISIBLE_DEVICES"] = '1'
+cudnn.benchmark = True
+torch.cuda.set_device(0)
+# os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 
 mrcnn = MRCNN(is_gpu=if_gpu)
 
@@ -92,7 +95,7 @@ def fvg_save_processed_frames(in_path, seg_out_path, sil_out_path, crop_out_path
                 batch_frame = batch_frame.cuda()
             batch_frame = pre_process_batch(batch_frame)
             start = time.time()
-            segmentations, silhouettes, crops = mrcnn.process_batch(batch_frame, 0.9, 1, 10)
+            segmentations, silhouettes, crops = mrcnn.process_batch(batch_frame, 0.9, 1, 10, 'FVG')
             print( len(batch_frame)/(time.time()-start) )
 
             for segmentation,silhouette,crop,file_name in zip(segmentations, silhouettes, crops, batch_frame_names):
