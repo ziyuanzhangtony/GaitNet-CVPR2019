@@ -3,9 +3,6 @@ training not include CBG
 no weights decay makes synthesize image better
 weights decay makes performance better
 """
-
-
-
 import random
 import os
 import numpy as np
@@ -45,7 +42,7 @@ parser.add_argument('--savedir', default='./runs')
 signature = input('Specify a NAME for this running:')
 parser.add_argument('--signature', default=signature)
 opt = parser.parse_args()
-torch.cuda.set_device(0)
+torch.cuda.set_device(2)
 # os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 module_save_path = os.path.join(opt.savedir, 'modules', signature)
@@ -648,12 +645,12 @@ if loading_model_path:
     print('MODEL LOADING SUCCESSFULLY:', loading_model_path)
 
 
-# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # if torch.cuda.device_count() > 1:
 #   print("Let's use", torch.cuda.device_count(), "GPUs!")
 #   netE = nn.DataParallel(netE)
 #   netD = nn.DataParallel(netD)
-#   lstm = nn.DataParallel(lstm)
+#   # lstm = nn.DataParallel(lstm)
 
 # netE.to(device)
 # netD.to(device)
@@ -661,11 +658,11 @@ if loading_model_path:
 
 # optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
 # optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
-optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
+# optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
 
 optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999))
 optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999))
-# optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
+optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
 
 mse_loss = nn.MSELoss()
 bce_loss = nn.BCELoss()
