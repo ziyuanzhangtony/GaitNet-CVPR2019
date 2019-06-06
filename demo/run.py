@@ -14,7 +14,7 @@ parser.add_argument('--gpu_idx', type=int, default=0)
 parser.add_argument('--camera_idx', type=int, default=0)
 parser.add_argument('--input_height', type=int, default=960, help='the height of the input imag')
 parser.add_argument('--input_width', type=int, default=540, help='the width of the input image')
-# parser.add_argument('--threshold', type=float, default=0.7, help='threshold for recognition')
+parser.add_argument('--threshold', type=float, default=0.7, help='threshold for recognition')
 args = parser.parse_args()
 os.environ["CUDA_VISIBLE_DEVICES"] = str(args.gpu_idx)
 
@@ -69,7 +69,8 @@ class VideoCapture:
         if self.vid.isOpened():
             self.vid.release()
 
-vid = VideoCapture(args.camera_idx)
+#vid = VideoCapture(args.camera_idx)
+vid = VideoCapture("C:/Users/Hao/Videos/WIN_20190517_14_36_42_Pro.mp4")
 
 database = load_database()
 def check_database():

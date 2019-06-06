@@ -179,6 +179,7 @@ parser.add_argument('--ha_dim', type=int, default=288, help='size of the appeara
 parser.add_argument('--hg_dim', type=int, default=32, help='size of the gait vector')
 parser.add_argument('--image_width', type=int, default=32, help='the width of the input image to network')
 parser.add_argument('--image_height', type=int, default=64, help='the height of the input image to network')
+parser.add_argument('--threshold', type=float, default=0.85)
 opt = parser.parse_args()
 netE = encoder()
 netD = decoder()

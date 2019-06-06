@@ -33,8 +33,8 @@ parser = argparse.ArgumentParser()
 gpu_index = []
 parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
 parser.add_argument('--data_root',
-                    # default='/home/tony/Research/NEW-MRCNN/SEG/',
-                    default='/user/zhang835/link2-ziyuan-ssd/FVG/SEG',
+                    default='/home/tony/Research/NEW-MRCNN/SEG/',
+                    # default='/user/zhang835/link2-ziyuan-ssd/FVG/SEG',
                     help='root directory for data')
 parser.add_argument('--seed', default=1, type=int, help='manual seed')
 parser.add_argument('--batch_size', default=16, type=int, help='batch size')
@@ -48,7 +48,7 @@ parser.add_argument('--savedir', default='./runs')
 signature = input('Specify a NAME for this running:')
 parser.add_argument('--signature', default=signature)
 opt = parser.parse_args()
-torch.cuda.set_device(2)
+torch.cuda.set_device(1)
 
 module_save_path = os.path.join(opt.savedir, 'modules', signature)
 if os.path.exists(module_save_path):
@@ -329,9 +329,9 @@ class FVG(object):
         :return:
         """
         training_data_structure = {
-            'session1': list(range(1, 12 + 1)),
-            'session2': list(range(1, 9 + 1)),
-            'session3': list(range(1, 9 + 1)),
+            'session1': [1,2,3,4,5,6,10,11,12],
+            'session2': [1,2,3,4,5,6,7,8,9,7,8,9],
+            # 'session3': list(range(1, 9 + 1)),
         }
 
         # 30 x 3 x 32 x 64
@@ -349,7 +349,7 @@ class FVG(object):
 
             if si in list(range(1, 147 + 1)):
                 if si in [1, 2, 4, 7, 8, 12, 13, 17, 31, 40, 48, 77]:
-                    reading_dir = random.choice(['session1', 'session3'])
+                    reading_dir = random.choice(['session1'])#, 'session3'])
                 else:
                     reading_dir = 'session1'
             else:

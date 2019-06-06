@@ -42,7 +42,7 @@ class App:
             return
 
         try:
-            self.segs = self.mrcnn_api.get_seg_batch(self.frames, 20)
+            self.segs = self.mrcnn_api.get_seg_batch(self.frames, 10)
             feature = self.gaitnet_api.main(self.segs)  # from video to feature
         except:
             print("Video processing failed. Please record again.")

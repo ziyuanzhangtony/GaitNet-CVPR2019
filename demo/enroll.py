@@ -46,26 +46,14 @@ class App:
             showinfo("Error", "Please enter a name")
             return
 
-<<<<<<< HEAD
-        # try:
-        self.segs  = self.mrcnn_api.get_seg_batch(self.frames,10)
-
-        feature = self.gaitnet_api.main(self.segs) # from video to feature
-        # except:
-        #     print("Video processing failed. Please record again.")
-        #     self.frames.clear()
-        #     self.is_record = True
-        #     return
-=======
         try:
-            self.segs  = self.mrcnn_api.get_seg_batch(self.frames,20)
+            self.segs  = self.mrcnn_api.get_seg_batch(self.frames,10)
             feature = self.gaitnet_api.main(self.segs) # from video to feature
         except:
             print("Video processing failed. Please record again.")
             self.frames.clear()
             self.is_record = True
             return
->>>>>>> bcb264bb17e2cb4482483be888abadd4fb310d19
 
         self.database[name] = feature # save feature in database
         if not os.path.exists('database/{}'.format(name)):
