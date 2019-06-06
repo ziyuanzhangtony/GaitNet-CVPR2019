@@ -2,22 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c216388-1101-4dd6-ad65-d69d4f88744f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/enroll.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/gaitnet/gaitnet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/gaitnet/model.pickle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/mrcnn/predictor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/mrcnn/process.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/recogn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/utils/helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/veri.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test11.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GaitNet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GaitNet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/inference/FVG/gaitnet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/inference/FVG/model.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cropped_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cropped_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test8_cudnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test10.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="GaitNet" />
@@ -111,8 +126,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="GaitNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -127,19 +147,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/segmentation" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gaitnet/inference/FVG" />
       <recent name="$PROJECT_DIR$/gaitnet/train/FVG" />
       <recent name="$PROJECT_DIR$/gaitnet/train" />
       <recent name="$PROJECT_DIR$/gaitnet/inference" />
       <recent name="$PROJECT_DIR$/gaitnet" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/segmentation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -171,17 +191,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105020000" />
+    <option name="totallyTimeSpent" value="105373000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="960" y="0" width="964" height="1044" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.17860906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.289011" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
+      <window_info anchor="bottom" id="File Transfer" weight="0.32934782" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.32827735" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.32826087" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -190,7 +211,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.31419286" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.26086956" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -233,19 +254,26 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GaitNet$train6_test_V2.coverage" NAME="train6_test_V2 Coverage Results" MODIFIED="1559596596539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cropped_images__1_.coverage" NAME="train_cropped_images (1) Coverage Results" MODIFIED="1559777724674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test8_256128.coverage" NAME="train_cvl1_test8_256128 Coverage Results" MODIFIED="1559705651169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test7.coverage" NAME="train_cvl1_test7 Coverage Results" MODIFIED="1559697409418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test11.coverage" NAME="train_cvl1_test11 Coverage Results" MODIFIED="1559848254263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test9.coverage" NAME="train_cvl1_test9 Coverage Results" MODIFIED="1559782574298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
+    <SUITE FILE_PATH="coverage/GaitNet$extract.coverage" NAME="extract Coverage Results" MODIFIED="1559589995872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
+    <SUITE FILE_PATH="coverage/GaitNet$testing_writer.coverage" NAME="testing_writer Coverage Results" MODIFIED="1559680438314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1.coverage" NAME="train_cvl1 Coverage Results" MODIFIED="1559695721804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cropped_images.coverage" NAME="train_cropped_images Coverage Results" MODIFIED="1559704391176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet$compression.coverage" NAME="compression Coverage Results" MODIFIED="1559586790622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
+    <SUITE FILE_PATH="coverage/GaitNet$train.coverage" NAME="train Coverage Results" MODIFIED="1559688055617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test5.coverage" NAME="train_cvl1_test5 Coverage Results" MODIFIED="1559772439368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
     <SUITE FILE_PATH="coverage/GaitNet$mrcnn_resnet50_fpn.coverage" NAME="mrcnn_resnet50_fpn Coverage Results" MODIFIED="1559253227574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
     <SUITE FILE_PATH="coverage/GaitNet$test.coverage" NAME="test Coverage Results" MODIFIED="1559343781780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
-    <SUITE FILE_PATH="coverage/GaitNet$extract.coverage" NAME="extract Coverage Results" MODIFIED="1559589995872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$fvg.coverage" NAME="fvg Coverage Results" MODIFIED="1559438321737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
-    <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$fvg_cb.coverage" NAME="fvg-cb Coverage Results" MODIFIED="1559758245795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
-    <SUITE FILE_PATH="coverage/GaitNet$compression.coverage" NAME="compression Coverage Results" MODIFIED="1559586790622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
+    <SUITE FILE_PATH="coverage/GaitNet$fvg.coverage" NAME="fvg Coverage Results" MODIFIED="1559710951777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test10.coverage" NAME="train_cvl1_test10 Coverage Results" MODIFIED="1559782867088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test6.coverage" NAME="train_cvl1_test6 Coverage Results" MODIFIED="1559697312217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test8_cudnn.coverage" NAME="train_cvl1_test8_cudnn Coverage Results" MODIFIED="1559710333189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/segmentation/out.png" />
-    <entry file="file://$PROJECT_DIR$/segmentation/test.jpeg" />
-    <entry file="file://$PROJECT_DIR$/../version_dev02/mrcnn/predictor.py" />
-    <entry file="file://$PROJECT_DIR$/segmentation/test.py" />
-    <entry file="file://$PROJECT_DIR$/segmentation/deeplabv3_resnet101.py" />
     <entry file="file://$PROJECT_DIR$/segmentation/frcnn_resnet50_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -332,28 +360,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataset/FVG/download.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/multiprocessing/process.py" />
-    <entry file="file://$PROJECT_DIR$/../Dropbox/GaitNet/PRODUCT/GaitNet_DEV/version_dev01/gui_root.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="39" column="67" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dropbox/GaitNet/PRODUCT/GaitNet_DEV/version_dev01/gui_root.py" />
     <entry file="file://$PROJECT_DIR$/segmentation/fvg-cb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -393,49 +405,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test8_cudnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-618">
-          <caret line="465" column="13" selection-start-line="465" selection-start-column="13" selection-end-line="465" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/utils/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/gaitnet/gaitnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test8_cudnn.py" />
     <entry file="file://$PROJECT_DIR$/demo/mrcnn/process.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="47" column="95" selection-start-line="47" selection-start-column="95" selection-end-line="48" selection-end-column="56" />
           <folding>
             <element signature="e#72#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/enroll.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="64" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -466,11 +442,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/README.md">
+    <entry file="file://$PROJECT_DIR$/demo/README.md" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="686" selection-start-line="686" selection-end-line="686" />
+          <folding>
+            <element signature="e#120#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test9.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="671" column="35" selection-start-line="671" selection-start-column="35" selection-end-line="671" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test11.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="335" lean-forward="true" selection-start-line="335" selection-end-line="335" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/enroll.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="120">
+            <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/gaitnet/gaitnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="188" column="37" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/utils/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

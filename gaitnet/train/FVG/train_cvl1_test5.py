@@ -4,8 +4,6 @@ no weights decay makes synthesize image better
 weights decay makes performance better
 """
 
-
-
 import random
 import os
 import numpy as np
@@ -21,8 +19,13 @@ from torch.utils.tensorboard import SummaryWriter
 # from tensorboardX import SummaryWriter
 from PIL import Image
 from torch.nn.utils.rnn import pad_sequence
-from utils.compute import eval_lstm_roc
+from utils.compute import eval_roc
 import imageio
+
+import torch.backends.cudnn as cudnn
+
+cudnn.benchmark = True
+
 debug_mode = False
 #################################################################################################################
 # HYPER PARAMETERS INITIALIZING
@@ -30,8 +33,8 @@ parser = argparse.ArgumentParser()
 gpu_index = []
 parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
 parser.add_argument('--data_root',
-                    # default='/home/tony/Research/NEW-MRCNN/SEG/',
-                    default='/user/zhang835/link2-ziyuan-ssd/FVG/SEG',
+                    default='/home/tony/Research/NEW-MRCNN/SEG/',
+                    # default='/user/zhang835/link2-ziyuan-ssd/FVG/SEG',
                     help='root directory for data')
 parser.add_argument('--seed', default=1, type=int, help='manual seed')
 parser.add_argument('--batch_size', default=16, type=int, help='batch size')
@@ -45,8 +48,7 @@ parser.add_argument('--savedir', default='./runs')
 signature = input('Specify a NAME for this running:')
 parser.add_argument('--signature', default=signature)
 opt = parser.parse_args()
-torch.cuda.set_device(0)
-# os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+torch.cuda.set_device(1)
 
 module_save_path = os.path.join(opt.savedir, 'modules', signature)
 if os.path.exists(module_save_path):
@@ -71,6 +73,8 @@ torch.cuda.manual_seed_all(opt.seed)
 
 os.makedirs('%s/modules/%s' % (opt.savedir, opt.signature), exist_ok=True)
 os.makedirs('%s/gifs/%s' % (opt.savedir, opt.signature), exist_ok=True)
+
+
 #################################################################################################################
 class FVG_instance(object):
 
@@ -98,8 +102,10 @@ class FVG_instance(object):
         except:
             frame = torch.zeros(3, self.frame_height, self.frame_width)
         return frame
+
     def __len__(self):
         return len(self.frame_names)
+
 
 class FVG(object):
 
@@ -168,7 +174,7 @@ class FVG(object):
             if len(data):
                 data = torch.cat(data)
             else:
-                data = torch.zeros([3,self.im_height,self.im_height])
+                data = torch.zeros([3, self.im_height, self.im_height])
             return data
 
         test_data_glr = []
@@ -183,7 +189,7 @@ class FVG(object):
             gt.append(len(probes))
             for j in probes:
                 test_data_prb.append(read_frames(id, j))
-            print('Training data?:', is_train_data, 'Reading', i, 'th subject:',id)
+            print('Training data?:', is_train_data, 'Reading', i, 'th subject:', id)
 
         test_data_glr = pad_sequence(test_data_glr)
         test_data_glr = test_data_glr[:70]
@@ -401,9 +407,10 @@ class FVG(object):
             return len(self.train_subjects) * 12
         else:
             return len(self.test_subjects) * 12
+
+
 # #################################################################################################################
 # DATASET PREPARATION
-
 
 
 fvg = FVG(
@@ -414,21 +421,21 @@ fvg = FVG(
     seed=opt.seed
 )
 data_loader = DataLoader(fvg,
-                       num_workers=8,
-                       batch_size=opt.batch_size,
-                       shuffle=True,
-                       drop_last=True,
-                       pin_memory=True)
-def get_batch(is_train):
-    fvg.is_train_data = is_train
+                         num_workers=8,
+                         batch_size=opt.batch_size,
+                         shuffle=True,
+                         drop_last=True,
+                         pin_memory=True)
+
+
+def get_batch():
     while True:
         for batch in data_loader:
             batch = [e.cuda() for e in batch]
             yield batch
 
-training_batch_generator = get_batch(is_train=True)
-testing_batch_generator = get_batch(is_train=False)
 
+training_batch_generator = get_batch()
 # #################################################################################################################
 
 # def init_weights(m):
@@ -454,10 +461,12 @@ def adjust_white_balance(x):
 
     return x
 
+
 def adjust_(x):
     x = transforms.functional.adjust_brightness(x, 1.5)
     x = transforms.functional.adjust_contrast(x, 1.5)
     return x
+
 
 #################################################################################################################
 
@@ -524,7 +533,7 @@ class encoder(nn.Module):
         )
 
         self.flatten = nn.Sequential(
-            nn.Linear(nf * 8 * 2 * 4,self.em_dim),
+            nn.Linear(nf * 8 * 2 * 4, self.em_dim),
             nn.BatchNorm1d(self.em_dim),
         )
 
@@ -594,8 +603,6 @@ class decoder(nn.Module):
             # because image pixels are from 0-1, 0-255
         )
 
-
-
     def forward(self, fa, fg):
         hidden = torch.cat([fa, fg], 1).view(-1, opt.em_dim)
         small = self.trans(hidden).view(-1, 64 * 8, 4, 2)
@@ -647,7 +654,6 @@ if loading_model_path:
     lstm.load_state_dict(checkpoint['lstm'])
     print('MODEL LOADING SUCCESSFULLY:', loading_model_path)
 
-
 # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # if torch.cuda.device_count() > 1:
 #   print("Let's use", torch.cuda.device_count(), "GPUs!")
@@ -677,6 +683,8 @@ lstm.cuda()
 mse_loss.cuda()
 bce_loss.cuda()
 cse_loss.cuda()
+
+
 # trp_loss.cuda()
 
 #################################################################################################################
@@ -744,14 +752,12 @@ def plot_anology(data, itr):
         # frame = data[:,step:step+1,:,:,:]
         anology_frame = make_analogy_inter_subs(data, step, opt)
         anology_frame = anology_frame.cpu().numpy()
-        anology_frame = np.transpose(anology_frame,(1,2,0))
+        anology_frame = np.transpose(anology_frame, (1, 2, 0))
         # anology_frame = adjust_white_balance(anology_frame.cpu().numpy())
         frames.append(anology_frame)
-    imageio.mimsave("{:s}/gifs/{:s}/{:d}.gif".format(opt.savedir, opt.signature, itr),frames)
-
+    imageio.mimsave("{:s}/gifs/{:s}/{:d}.gif".format(opt.savedir, opt.signature, itr), frames)
 
     # all = torch.cat([anology1, anology2], dim=1)
-
 
     # writer.add_image('inter_sub', all, epoch)
 
@@ -760,6 +766,7 @@ def plot_anology(data, itr):
     # all = torch.cat([anology1, anology2], dim=1)
     # all = adjust_white_balance(all.detach())
     # writer.add_image('intral_sub', all, epoch)
+
 
 def write_tfboard(vals, itr, name):
     for idx, item in enumerate(vals):
@@ -840,8 +847,6 @@ def train_lstm(X, l):
 # FUN TRAINING TIME !
 
 
-
-
 proto_WS = np.load('testset_WS.npy', allow_pickle=True)
 proto_WS = torch.tensor(proto_WS[0]).cuda(), torch.tensor(proto_WS[1]).cuda(), proto_WS[2]
 proto_CB = np.load('testset_CB.npy', allow_pickle=True)
@@ -869,8 +874,7 @@ if not debug_mode:
         # batch_cond2 = batch_cond2.to(device)
         # lb = lb.to(device)
 
-
-        xrec_loss,gait_sim_loss = train_main(batch_cond1, batch_cond2, lb)
+        xrec_loss, gait_sim_loss = train_main(batch_cond1, batch_cond2, lb)
         write_tfboard([xrec_loss], itr, name='xrec_loss')
         write_tfboard([gait_sim_loss], itr, name='gait_sim_loss')
         id_incre_loss = train_lstm(batch_cond1, lb)
@@ -883,14 +887,13 @@ if not debug_mode:
                 netD.eval()
                 netE.eval()
                 lstm.eval()
-                eval_WS = eval_lstm_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
+                eval_WS = eval_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
                 write_tfboard(eval_WS[:2], itr, name='WS')
-                eval_CB = eval_lstm_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
+                eval_CB = eval_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
                 write_tfboard(eval_CB[:2], itr, name='CB')
-                eval_CL = eval_lstm_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
+                eval_CL = eval_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
                 write_tfboard(eval_CL[:2], itr, name='CL')
 
-                batch_cond1, batch_cond2, _ = next(testing_batch_generator)
                 plot_anology(batch_cond1, itr)
         # ----------------SAVE MODEL--------------------
         if itr % 1000 == 0 and itr != 0:
@@ -908,13 +911,13 @@ else:
         netD.eval()
         netE.eval()
         lstm.eval()
-        eval_WS = eval_lstm_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
+        eval_WS = eval_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
         print(eval_WS)
         # write_tfboard(eval_WS[:2], itr, name='WS')
-        eval_CB = eval_lstm_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
+        eval_CB = eval_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
         print(eval_CB)
         # write_tfboard(eval_CB[:2], itr, name='CB')
-        eval_CL = eval_lstm_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
+        eval_CL = eval_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
         print(eval_CL)
         # write_tfboard(eval_CL[:2], itr, name='CL')
         # writer.close()

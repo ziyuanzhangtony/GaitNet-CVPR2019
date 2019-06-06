@@ -21,8 +21,14 @@ from torch.utils.tensorboard import SummaryWriter
 # from tensorboardX import SummaryWriter
 from PIL import Image
 from torch.nn.utils.rnn import pad_sequence
-from utils.compute import eval_lstm_roc
+from utils.compute import eval_roc
 import imageio
+
+
+import torch.backends.cudnn as cudnn
+
+cudnn.benchmark = True
+
 debug_mode = False
 #################################################################################################################
 # HYPER PARAMETERS INITIALIZING
@@ -41,12 +47,12 @@ parser.add_argument('--fg_dim', type=int, default=32, help='size of the gait vec
 parser.add_argument('--im_height', type=int, default=64, help='the height of the input image to network')
 parser.add_argument('--im_width', type=int, default=32, help='the width of the input image to network')
 parser.add_argument('--max_step', type=int, default=20, help='maximum distance between frames')
-parser.add_argument('--savedir', default='./runs2')
+parser.add_argument('--savedir', default='./runs')
 signature = input('Specify a NAME for this running:')
 parser.add_argument('--signature', default=signature)
 opt = parser.parse_args()
 # os.environ["CUDA_VISIBLE_DEVICES"] = "2"
-torch.cuda.set_device(1)
+torch.cuda.set_device(0)
 
 module_save_path = os.path.join(opt.savedir, 'modules', signature)
 if os.path.exists(module_save_path):
@@ -419,15 +425,13 @@ data_loader = DataLoader(fvg,
                        shuffle=True,
                        drop_last=True,
                        pin_memory=True)
-def get_batch(is_train):
-    fvg.is_train_data = is_train
+def get_batch():
     while True:
         for batch in data_loader:
             batch = [e.cuda() for e in batch]
             yield batch
 
-training_batch_generator = get_batch(is_train=True)
-testing_batch_generator = get_batch(is_train=False)
+training_batch_generator = get_batch()
 
 # #################################################################################################################
 
@@ -883,14 +887,13 @@ if not debug_mode:
                 netD.eval()
                 netE.eval()
                 lstm.eval()
-                eval_WS = eval_lstm_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
+                eval_WS = eval_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
                 write_tfboard(eval_WS[:2], itr, name='WS')
-                eval_CB = eval_lstm_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
+                eval_CB = eval_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
                 write_tfboard(eval_CB[:2], itr, name='CB')
-                eval_CL = eval_lstm_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
+                eval_CL = eval_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
                 write_tfboard(eval_CL[:2], itr, name='CL')
 
-                batch_cond1, batch_cond2, _ = next(testing_batch_generator)
                 plot_anology(batch_cond1, itr)
         # ----------------SAVE MODEL--------------------
         if itr % 1000 == 0 and itr != 0:
@@ -908,13 +911,13 @@ else:
         netD.eval()
         netE.eval()
         lstm.eval()
-        eval_WS = eval_lstm_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
+        eval_WS = eval_roc(proto_WS[0], proto_WS[1], proto_WS[2], 90, [netE, lstm], opt)
         print(eval_WS)
         # write_tfboard(eval_WS[:2], itr, name='WS')
-        eval_CB = eval_lstm_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
+        eval_CB = eval_roc(proto_CB[0], proto_CB[1], proto_CB[2], 90, [netE, lstm], opt)
         print(eval_CB)
         # write_tfboard(eval_CB[:2], itr, name='CB')
-        eval_CL = eval_lstm_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
+        eval_CL = eval_roc(proto_CL[0], proto_CL[1], proto_CL[2], 90, [netE, lstm], opt)
         print(eval_CL)
         # write_tfboard(eval_CL[:2], itr, name='CL')
         # writer.close()
