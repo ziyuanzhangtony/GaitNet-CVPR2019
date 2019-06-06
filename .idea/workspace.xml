@@ -1,18 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c216388-1101-4dd6-ad65-d69d4f88744f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test9.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GaitNet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GaitNet.iml" afterDir="false" />
+    <list default="true" id="db904475-0dad-4ce8-b0e3-c5c7d0f230d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/2019-04-19 23:40:21.545902/events.out.tfevents.1555731644.Tony-PC" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GaitNet-CVPR2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GaitNet-CVPR2019.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/inference/FVG/gaitnet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/inference/FVG/model.pickle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cropped_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cropped_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test8_cudnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/100.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1000.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1050.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1100.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1150.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1200.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1250.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1300.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1350.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1400.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1450.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/150.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1500.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1550.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1600.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1650.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1700.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1750.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1800.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1850.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1900.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1950.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/200.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2000.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2050.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2100.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2150.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2200.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2250.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2300.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2350.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2400.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2450.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/250.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2500.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2550.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2600.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2650.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2700.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2750.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2800.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2850.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2900.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2950.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/300.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/3000.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/350.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/400.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/450.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/50.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/500.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/550.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/600.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/650.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/700.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/750.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/800.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/850.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/900.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/950.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/100.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/150.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/200.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/250.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/300.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/350.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/400.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/450.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/50.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/500.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/550.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/600.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/650.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/700.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/CASIA-B/events.out.tfevents.1559767414.tony-cvlab.11117.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/CASIAB2-TEST/events.out.tfevents.1559769299.tony-cvlab.25815.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/1000.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/2000.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/3000.pickle" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +109,8 @@
     <expand />
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="GaitNet" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -122,22 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GaitNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GaitNet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -191,15 +248,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105373000" />
+    <option name="totallyTimeSpent" value="105376000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="964" height="1044" extended-state="0" />
+    <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.289011" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.17449306" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
-      <window_info anchor="bottom" id="File Transfer" weight="0.32934782" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.32826087" />
@@ -213,6 +269,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.26086956" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
+      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.32934782" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -253,25 +310,9 @@
     </ignored-roots>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/GaitNet$train6_test_V2.coverage" NAME="train6_test_V2 Coverage Results" MODIFIED="1559596596539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cropped_images__1_.coverage" NAME="train_cropped_images (1) Coverage Results" MODIFIED="1559777724674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test8_256128.coverage" NAME="train_cvl1_test8_256128 Coverage Results" MODIFIED="1559705651169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test7.coverage" NAME="train_cvl1_test7 Coverage Results" MODIFIED="1559697409418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test11.coverage" NAME="train_cvl1_test11 Coverage Results" MODIFIED="1559848254263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test9.coverage" NAME="train_cvl1_test9 Coverage Results" MODIFIED="1559782574298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$extract.coverage" NAME="extract Coverage Results" MODIFIED="1559589995872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$testing_writer.coverage" NAME="testing_writer Coverage Results" MODIFIED="1559680438314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1.coverage" NAME="train_cvl1 Coverage Results" MODIFIED="1559695721804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cropped_images.coverage" NAME="train_cropped_images Coverage Results" MODIFIED="1559704391176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
-    <SUITE FILE_PATH="coverage/GaitNet$compression.coverage" NAME="compression Coverage Results" MODIFIED="1559586790622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dataset/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$train.coverage" NAME="train Coverage Results" MODIFIED="1559688055617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test5.coverage" NAME="train_cvl1_test5 Coverage Results" MODIFIED="1559772439368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$mrcnn_resnet50_fpn.coverage" NAME="mrcnn_resnet50_fpn Coverage Results" MODIFIED="1559253227574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
-    <SUITE FILE_PATH="coverage/GaitNet$test.coverage" NAME="test Coverage Results" MODIFIED="1559343781780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
-    <SUITE FILE_PATH="coverage/GaitNet$fvg.coverage" NAME="fvg Coverage Results" MODIFIED="1559710951777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/segmentation" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test10.coverage" NAME="train_cvl1_test10 Coverage Results" MODIFIED="1559782867088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/FVG" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test6.coverage" NAME="train_cvl1_test6 Coverage Results" MODIFIED="1559697312217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
-    <SUITE FILE_PATH="coverage/GaitNet$train_cvl1_test8_cudnn.coverage" NAME="train_cvl1_test8_cudnn Coverage Results" MODIFIED="1559710333189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train" />
+    <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$train_cvl1_test5.coverage" NAME="train_cvl1_test5 Coverage Results" MODIFIED="1559762158550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
+    <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$train.coverage" NAME="train Coverage Results" MODIFIED="1559830662504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
+    <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$main4.coverage" NAME="main4 Coverage Results" MODIFIED="1559839470481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/segmentation/frcnn_resnet50_fpn.py">
@@ -283,22 +324,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/os.py" />
     <entry file="file://$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn_bkup.py" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/inference/FVG/gaitnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="189" column="18" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#149#436#0" />
-            <element signature="e#470#782#0" />
-            <element signature="e#818#1120#0" />
-            <element signature="e#1151#2952#0" />
-            <element signature="e#2983#4025#0" />
-            <element signature="e#4053#5203#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/inference/FVG/gaitnet.py" />
     <entry file="file://$PROJECT_DIR$/detection/fvg.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/PIL/Image.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torchvision/transforms/__init__.py" />
