@@ -1,3 +1,7 @@
+import sys
+sys.path.insert(0, "..")
+print(sys.path)
+
 import tkinter as tk
 import enroll,recogn,veri
 from gaitnet import gaitnet
@@ -69,8 +73,8 @@ class VideoCapture:
         if self.vid.isOpened():
             self.vid.release()
 
-#vid = VideoCapture(args.camera_idx)
-vid = VideoCapture("C:/Users/Hao/Videos/WIN_20190517_14_36_42_Pro.mp4")
+vid = VideoCapture(args.camera_idx)
+# vid = VideoCapture("C:/Users/Hao/Videos/WIN_20190517_14_36_42_Pro.mp4")
 
 database = load_database()
 def check_database():
