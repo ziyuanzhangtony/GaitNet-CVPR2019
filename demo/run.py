@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, "..")
-print(sys.path)
+# print(sys.path)
 
 import tkinter as tk
 import enroll,recogn,veri

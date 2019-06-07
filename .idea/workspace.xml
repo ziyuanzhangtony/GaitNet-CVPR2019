@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db904475-0dad-4ce8-b0e3-c5c7d0f230d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data-padtopdown.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-old_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/2019-04-19 23:40:21.545902/events.out.tfevents.1555731644.Tony-PC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/new_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/.directory" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +25,28 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/veri.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demo/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,11 +117,11 @@
         <option value="$PROJECT_DIR$/demo/mrcnn/process.py" />
         <option value="$PROJECT_DIR$/demo/enroll.py" />
         <option value="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" />
-        <option value="$PROJECT_DIR$/demo/run.py" />
         <option value="$PROJECT_DIR$/gaitnet/train/CASIAB/.gitignore" />
         <option value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" />
         <option value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" />
         <option value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py" />
+        <option value="$PROJECT_DIR$/demo/run.py" />
       </list>
     </option>
   </component>
@@ -128,6 +143,11 @@
             <path>
               <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
@@ -285,10 +305,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115211000" />
+    <option name="totallyTimeSpent" value="115873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="28" width="964" height="1056" extended-state="4" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.3835165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -355,7 +376,6 @@
     <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$main4_training_on_old.coverage" NAME="main4-training-on-old Coverage Results" MODIFIED="1559873685436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/utils/tensorboard/__init__.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/argparse.pyi">
       <provider selected="true" editor-type-id="text-editor">
@@ -447,17 +467,6 @@
     <entry file="file://$PROJECT_DIR$/demo/mrcnn/predictor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3417" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#1107#2762#0" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/README.md" />
@@ -555,6 +564,22 @@
           <folding>
             <element signature="e#957#8905#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/veri.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
