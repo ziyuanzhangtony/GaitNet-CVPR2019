@@ -28,8 +28,8 @@ from scipy.stats import itemfreq
 
 
 import torch.backends.cudnn as cudnn
-cudnn.deterministic = True
-cudnn.benchmark = False
+# cudnn.deterministic = True
+cudnn.benchmark = True
 
 class CASIAB(object):
 
@@ -58,7 +58,8 @@ class CASIAB(object):
 
         self.transform = transforms.Compose([
             transforms.ToPILImage(),
-            # transforms.Pad((50, 0)),
+            transforms.Resize((image_height, image_width)),
+            transforms.Pad((2, 4)),
             transforms.Resize((image_height,image_width)),
             transforms.ToTensor()
         ])
@@ -480,7 +481,7 @@ parser.add_argument('--gpu', type=int, default=gpu_num)
 parser.add_argument('--siter', type=int, default=0, help='number of itr to start with')
 parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
 parser.add_argument('--data_root',
-                    default='/home/tony/Research/CB-RGB-BS/',
+                    default='/home/tony/Research/CB-RGB-MRCNN/',
                     # default='/home/tony/Research/CB-RGB-BS/',
                      help='root directory for data')
 parser.add_argument('--seed', default=1, type=int, help='manual seed')

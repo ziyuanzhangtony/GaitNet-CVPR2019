@@ -28,8 +28,8 @@ from scipy.stats import itemfreq
 
 
 import torch.backends.cudnn as cudnn
-cudnn.deterministic = True
-cudnn.benchmark = False
+#cudnn.deterministic = True
+cudnn.benchmark = True
 
 class CASIAB(object):
 
@@ -83,13 +83,13 @@ class CASIAB(object):
                 si_idx = np.random.choice(self.test_subjects)
                 label = self.test_subjects.index(si_idx)
 
-            cond1 = np.random.choice(['nm', 'cl'])
+            cond1 = np.random.choice(['1', '2'])
             if cond1 == 1:
                 senum1 = np.random.choice(list(range(1, 2 + 1)))
             else:
                 senum1 = np.random.choice(list(range(1, 2 + 1)))
 
-            cond2 = np.random.choice(['nm', 'cl'])
+            cond2 = np.random.choice(['1', '2'])
             if cond2 == 1:
                 senum2 = np.random.choice(list(range(1, 2 + 1)))
             else:
@@ -192,7 +192,7 @@ class CASIAB(object):
         else:
             data_type = self.test_subjects
 
-        conditions = ['nm','cl']
+        conditions = ['1','2']
         ###########################################################
         #gallry
         for vi in self.glr_views:
