@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c216388-1101-4dd6-ad65-d69d4f88744f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/demo" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/enroll.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/gaitnet/gaitnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/gaitnet/model.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/mrcnn/predictor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/mrcnn/process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/recogn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/utils/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/veri.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
