@@ -1,4 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 import sys
 import argparse
 # from maskrcnn_benchmark.config import cfg
