@@ -1,6 +1,11 @@
 import os,pickle
 import numpy as np
 from PIL import Image
+from scipy import spatial
+
+def calculate_cosine_similarity(a, b):
+    score = 1 - spatial.distance.cosine(a, b)
+    return score
 
 def center(win):
     win.update_idletasks()
