@@ -45,6 +45,7 @@ parser.add_argument('--savedir', default='./runs')
 signature = input('Specify a NAME for this running:')
 parser.add_argument('--signature', default=signature)
 opt = parser.parse_args()
+torch.cuda.set_device(0)
 # os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 module_save_path = os.path.join(opt.savedir, 'modules', signature)

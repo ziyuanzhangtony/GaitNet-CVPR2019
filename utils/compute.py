@@ -88,7 +88,7 @@ def calculate_identication_rate_single(glrs, aprb, trueid, rank=1):
     else:
         return 0, [right, predicted]
 
-def eval_lstm_roc(glr, prb, gt, n_test, networks, opt):
+def eval_roc(glr, prb, gt, n_test, networks, opt):
     netE, lstm = networks
 
     fg_glr = [netE(glr[i].cuda())[1].detach() for i in range(len(glr))]
@@ -111,7 +111,7 @@ def eval_lstm_roc(glr, prb, gt, n_test, networks, opt):
     return find_idx(fpr, tpr) #, obj_arr
 
 
-def eval_lstm_cmc(glr, prb, networks, opt):
+def eval_cmc(glr, prb, networks, opt, glr_views, prb_views, is_same_view):
     netE, lstm = networks
     pb_vecs = []
     gr_vecs = []
@@ -131,14 +131,26 @@ def eval_lstm_cmc(glr, prb, networks, opt):
     for pb_idx, pv in enumerate(pb_vecs):
         scores_this_pv = []
         for gv_idx, gv in enumerate(gr_vecs):
-            if opt.glr_views[gv_idx] != opt.prb_views[pb_idx]:
-                score = []
-                for i in range(len(pv)):
-                    id = i
-                    id_range = list(range(id, id + 1))
-                    score.append(calculate_identication_rate_single(gv, pv[i], id_range)[0])
-                score = sum(score) / float(len(score))
-                scores_this_pv.append(score)
+
+            if glr_views[gv_idx] != prb_views[pb_idx]: # if not the same view
+                    score = []
+                    for i in range(len(pv)):
+                        id = i
+                        id_range = list(range(id, id + 1))
+                        score.append(calculate_identication_rate_single(gv, pv[i], id_range)[0])
+                    score = sum(score) / float(len(score))
+                    scores_this_pv.append(score)
+
+            else:
+                if is_same_view:
+                    score = []
+                    for i in range(len(pv)):
+                        id = i
+                        id_range = list(range(id, id + 1))
+                        score.append(calculate_identication_rate_single(gv, pv[i], id_range)[0])
+                    score = sum(score) / float(len(score))
+                    scores_this_pv.append(score)
+
         scores_this_pv = sum(scores_this_pv) / float(len(scores_this_pv))
         scores_all.append(scores_this_pv)
     return scores_all

@@ -2,10 +2,100 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c216388-1101-4dd6-ad65-d69d4f88744f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1000.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1050.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1150.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1200.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1250.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1300.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1350.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1400.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1450.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/150.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1500.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1550.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1600.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1650.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1700.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1750.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1800.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1850.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1900.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/1950.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/200.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2000.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2050.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2150.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2200.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2250.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2300.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2350.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2400.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2450.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/250.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2500.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2550.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2600.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2650.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2700.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2750.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2800.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2850.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2900.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/2950.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/300.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/3000.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/350.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/400.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/450.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/500.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/550.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/600.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/650.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/700.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/750.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/800.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/850.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/900.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/950.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/150.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/200.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/250.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/300.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/350.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/400.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/450.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/500.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/550.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/600.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/650.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIAB2-TEST/700.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/CASIA-B/events.out.tfevents.1559767414.tony-cvlab.11117.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/CASIAB2-TEST/events.out.tfevents.1559769299.tony-cvlab.25815.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/1000.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/2000.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/3000.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/FVG/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/graph.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GaitNet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GaitNet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo" beforeDir="false" afterPath="$PROJECT_DIR$/demo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/apex/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/apex/.nojekyll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/apex/LICENSE" beforeDir="false" />
@@ -507,8 +597,11 @@
       <change beforePath="$PROJECT_DIR$/demo/mrcnn/tests/test_segmentation_mask.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/mrcnn/tests/utils.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test6.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/archieve/train_cvl1_test6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test7.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG/archieve/train_cvl1_test7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/compute.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/compute.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -524,8 +617,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="103">
+              <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -606,8 +699,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="130" />
+    <option name="x" value="309" />
+    <option name="y" value="320" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -618,22 +711,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -669,34 +747,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GaitNet" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/demo" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.run" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -718,14 +768,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.17860906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -734,7 +783,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.31419286" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.31419286" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1001,8 +1050,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="103">
+          <caret line="76" column="15" selection-start-line="76" selection-start-column="15" selection-end-line="76" selection-end-column="15" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
