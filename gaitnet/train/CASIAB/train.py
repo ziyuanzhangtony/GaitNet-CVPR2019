@@ -315,19 +315,14 @@ data_loader = DataLoader(fvg,
                          shuffle=True,
                          drop_last=True,
                          pin_memory=True)
-
-
-def get_batch(is_train):
-    fvg.is_train_data = is_train
+def get_batch():
     while True:
         for batch in data_loader:
             batch = [e.cuda() for e in batch]
             yield batch
 
 
-training_batch_generator = get_batch(is_train=True)
-testing_batch_generator = get_batch(is_train=False)
-
+training_batch_generator = get_batch()
 
 # #################################################################################################################
 
@@ -410,16 +405,16 @@ class encoder(nn.Module):
         nf = 64
         self.main = nn.Sequential(
             dcgan_conv(nc, nf),
-            vgg_layer(nf, nf),
+            # vgg_layer(nf, nf),
 
             dcgan_conv(nf, nf * 2),
-            vgg_layer(nf * 2, nf * 2),
+            # vgg_layer(nf * 2, nf * 2),
 
             dcgan_conv(nf * 2, nf * 4),
-            vgg_layer(nf * 4, nf * 4),
+            # vgg_layer(nf * 4, nf * 4),
 
             dcgan_conv(nf * 4, nf * 8),
-            vgg_layer(nf * 8, nf * 8),
+            # vgg_layer(nf * 8, nf * 8),
 
             # nn.Conv1d(nf * 8, self.em_dim, 4, 1, 0),
             # nn.BatchNorm2d(self.em_dim),
@@ -428,34 +423,6 @@ class encoder(nn.Module):
         self.flatten = nn.Sequential(
             nn.Linear(nf * 8 * 2 * 4, self.em_dim),
             nn.BatchNorm1d(self.em_dim),
-        )
-
-        self.fa_fc = nn.Sequential(
-            nn.LeakyReLU(),
-            nn.Linear(self.em_dim, self.em_dim // 2),
-            nn.BatchNorm1d(self.em_dim // 2),
-
-            nn.LeakyReLU(),
-            nn.Linear(self.em_dim // 2, self.em_dim // 2),
-            nn.BatchNorm1d(self.em_dim // 2),
-
-            nn.LeakyReLU(),
-            nn.Linear(self.em_dim // 2, opt.fa_dim),
-            nn.BatchNorm1d(opt.fa_dim)
-        )
-
-        self.fg_fc = nn.Sequential(
-            nn.LeakyReLU(),
-            nn.Linear(self.em_dim, self.em_dim // 2),
-            nn.BatchNorm1d(self.em_dim // 2),
-
-            nn.LeakyReLU(),
-            nn.Linear(self.em_dim // 2, self.em_dim // 2),
-            nn.BatchNorm1d(self.em_dim // 2),
-
-            nn.LeakyReLU(),
-            nn.Linear(self.em_dim // 2, opt.fg_dim),
-            nn.BatchNorm1d(opt.fg_dim)
         )
 
     def forward(self, input):
@@ -480,16 +447,16 @@ class decoder(nn.Module):
             # nn.ConvTranspose2d(self.em_dim, nf * 8, 4, 1, 0),
             # nn.BatchNorm2d(nf * 8),
             nn.LeakyReLU(0.2),
-            vgg_layer(nf * 8, nf * 8),
+            # vgg_layer(nf * 8, nf * 8),
 
             dcgan_upconv(nf * 8, nf * 4),
-            vgg_layer(nf * 4, nf * 4),
+            # vgg_layer(nf * 4, nf * 4),
 
             dcgan_upconv(nf * 4, nf * 2),
-            vgg_layer(nf * 2, nf * 2),
+            # vgg_layer(nf * 2, nf * 2),
 
             dcgan_upconv(nf * 2, nf),
-            vgg_layer(nf, nf),
+            # vgg_layer(nf, nf),
 
             nn.ConvTranspose2d(nf, nc, 4, 2, 1),
             nn.Sigmoid()
@@ -504,7 +471,7 @@ class decoder(nn.Module):
 
 
 class lstm(nn.Module):
-    def __init__(self, hidden_dim=128, tagset_size=226):
+    def __init__(self, hidden_dim=128, tagset_size=74):
         super(lstm, self).__init__()
         self.source_dim = opt.fg_dim
         self.hidden_dim = hidden_dim
@@ -560,11 +527,11 @@ if loading_model_path:
 
 # optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
 # optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
-optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
+# optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999), weight_decay=0.001)
 
 optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999))
 optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999))
-# optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
+optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
 
 mse_loss = nn.MSELoss()
 bce_loss = nn.BCELoss()
@@ -774,7 +741,7 @@ if not debug_mode:
         print(itr)
 
         # ----------------EVAL()--------------------
-        if itr % 50 == 0:  # and itr != 0:
+        if itr % 50 == 0 and itr != 0:
             with torch.no_grad():
                 netD.eval()
                 netE.eval()

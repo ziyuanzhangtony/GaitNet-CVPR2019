@@ -5,7 +5,6 @@
       <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/2019-04-19 23:40:21.545902/events.out.tfevents.1555731644.Tony-PC" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/GaitNet-CVPR2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GaitNet-CVPR2019.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/0.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/gifs/CASIA-B/100.gif" beforeDir="false" />
@@ -88,6 +87,7 @@
       <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/1000.pickle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/2000.pickle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/modules/CASIA-B/3000.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +110,29 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="192" column="33" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -179,14 +201,14 @@
         <option value="$PROJECT_DIR$/demo/enroll.py" />
         <option value="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" />
         <option value="$PROJECT_DIR$/demo/run.py" />
+        <option value="$PROJECT_DIR$/gaitnet/train/CASIAB/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="309" />
-    <option name="y" value="320" />
-    <option name="width" value="1440" />
-    <option name="height" value="780" />
+    <option name="x" value="2045" />
+    <option name="width" value="1717" />
+    <option name="height" value="965" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -194,29 +216,65 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="CASIAB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="FVG" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gaitnet/train/CASIAB" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gaitnet/train/CASIAB" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/segmentation" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gaitnet/inference/FVG" />
       <recent name="$PROJECT_DIR$/gaitnet/train/FVG" />
       <recent name="$PROJECT_DIR$/gaitnet/train" />
       <recent name="$PROJECT_DIR$/gaitnet/inference" />
       <recent name="$PROJECT_DIR$/gaitnet" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/segmentation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -236,7 +294,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4c216388-1101-4dd6-ad65-d69d4f88744f" name="Default Changelist" comment="" />
+      <changelist id="db904475-0dad-4ce8-b0e3-c5c7d0f230d5" name="Default Changelist" comment="" />
       <created>1559241590617</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -244,21 +302,23 @@
       <workItem from="1559241593219" duration="94091000" />
       <workItem from="1559620865521" duration="1315000" />
       <workItem from="1559622415134" duration="9614000" />
+      <workItem from="1559872566286" duration="226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105376000" />
+    <option name="totallyTimeSpent" value="106466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.17449306" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.17662753" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.32826087" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.3277487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -267,7 +327,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.26086956" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.49947533" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
       <window_info anchor="bottom" id="File Transfer" order="13" weight="0.32934782" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -315,16 +375,6 @@
     <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$main4.coverage" NAME="main4 Coverage Results" MODIFIED="1559839470481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/segmentation/frcnn_resnet50_fpn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="86" column="25" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/os.py" />
-    <entry file="file://$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn_bkup.py" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/inference/FVG/gaitnet.py" />
     <entry file="file://$PROJECT_DIR$/detection/fvg.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/PIL/Image.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torchvision/transforms/__init__.py" />
@@ -540,6 +590,29 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.directory">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="192" column="33" selection-start-line="192" selection-start-column="33" selection-end-line="192" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
