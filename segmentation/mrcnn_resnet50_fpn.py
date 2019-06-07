@@ -1,7 +1,10 @@
+import time
+
 import torchvision
 import torch
 import torch.backends.cudnn as cudnn
-cudnn.benchmark = True
+cudnn.deterministic = True
+cudnn.benchmark = False
 
 
 class MRCNN():
@@ -90,7 +93,10 @@ class MRCNN():
         segmentations_part = []
         silhouettes_part = []
         crops_part = []
+
+        time_test1_s = time.time()
         result = self.model(batch[:]) # seems the batch is mutable here
+        print("t2:" + str(time.time()-time_test1_s))
 
         for img, one in zip(batch, result):
 
