@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db904475-0dad-4ce8-b0e3-c5c7d0f230d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data-padtopdown.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-old_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/runs/logs/2019-04-19 23:40:21.545902/events.out.tfevents.1555731644.Tony-PC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB/new_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/.directory" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,50 +31,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7455">
-              <caret line="497" column="26" selection-start-line="497" selection-start-column="26" selection-end-line="497" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-              <folding>
-                <element signature="e#120#133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,6 +66,7 @@
       <find>__filter_person_and_select_top</find>
       <find>set</find>
       <find>set_de</find>
+      <find>encoder</find>
     </findStrings>
     <replaceStrings>
       <replace>frames</replace>
@@ -150,7 +111,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="-4" />
+    <option name="x" value="960" />
     <option name="y" value="28" />
     <option name="width" value="964" />
     <option name="height" value="1056" />
@@ -186,13 +147,6 @@
               <item name="train" type="462c0819:PsiDirectoryNode" />
               <item name="CASIAB" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
-              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="FVG" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -203,23 +157,24 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dataset" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dataset" />
+      <recent name="$PROJECT_DIR$/gaitnet/train/CASIAB" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/segmentation" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gaitnet/inference/FVG" />
       <recent name="$PROJECT_DIR$/gaitnet/train/FVG" />
       <recent name="$PROJECT_DIR$/gaitnet/train" />
       <recent name="$PROJECT_DIR$/gaitnet/inference" />
       <recent name="$PROJECT_DIR$/gaitnet" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gaitnet/train/CASIAB" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/segmentation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -248,7 +203,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data-padtopdown.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -270,7 +225,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-old_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -292,7 +247,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -325,18 +280,17 @@
       <workItem from="1559872566286" duration="226000" />
       <workItem from="1559873240498" duration="6326000" />
       <workItem from="1559934731940" duration="518000" />
-      <workItem from="1559935416647" duration="618000" />
+      <workItem from="1559935416647" duration="609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113928000" />
+    <option name="totallyTimeSpent" value="115211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="28" width="964" height="1056" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.37692308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.3835165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -350,9 +304,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.26293105" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26293105" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="File Transfer" order="13" visible="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="File Transfer" order="13" visible="true" weight="0.3286638" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -555,9 +509,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/utils/helper.py" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.directory">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -584,26 +535,9 @@
     </entry>
     <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/FVG/TABLE-6/GaitNet/train_.py" />
     <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4.-new-padtopdownpy" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7455">
-          <caret line="497" column="26" selection-start-line="497" selection-start-column="26" selection-end-line="497" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="510">
           <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
           <folding>
             <element signature="e#120#133#0" expanded="true" />
@@ -611,10 +545,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py">
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/old_code.py" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.directory" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data-padtopdown.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="210">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+          <folding>
+            <element signature="e#957#8905#0" />
+          </folding>
         </state>
       </provider>
     </entry>
