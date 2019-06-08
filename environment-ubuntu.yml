@@ -1,4 +1,4 @@
-name: torchvisiontest
+name: GaitNet
 channels:
   - pytorch
   - defaults

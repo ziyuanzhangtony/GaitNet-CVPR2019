@@ -9,7 +9,7 @@ fvg_structure = {
 }
 
 
-in_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG/RAW/'
+in_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG-NEW/RAW/'
 out_data_root = '/media/tony/Universe/FVG_ZIP/'
 
 

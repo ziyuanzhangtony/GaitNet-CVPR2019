@@ -44,7 +44,7 @@ def get_seg_batch(frames, batch_size):
                 frame = frame.cuda()
                 new_format.append(frame)
             time_test1_s = time.time()
-            composites, silhouettes, crops = mrcnn.process_batch(new_format, 0.9, 1, 10, 'FVG')
+            composites, silhouettes, crops = mrcnn.process_batch(new_format, 0.9, 1, 10, 'FVG-NEW')
             print("t1:" + str(time.time()-time_test1_s))
             for composite in composites:
                 if len(composite) > 0:

@@ -2,7 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db904475-0dad-4ce8-b0e3-c5c7d0f230d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/demo/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-new_data-padtopdown.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train6_test_V2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/FVG/compression.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/FVG/compression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/mrcnn/process.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/mrcnn/process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment-ubuntu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environment-ubuntu.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/new_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/new_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data-padtopdown.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-new_data-padtopdown-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-new_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-old_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-old_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/archieve/train_cvl1_test6.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/archieve/train_cvl1_test6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/archieve/train_cvl1_test7.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/archieve/train_cvl1_test7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/testing_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/testing_writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cropped_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train_cropped_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test10.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train_cvl1_test10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test11.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train_cvl1_test11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train_cvl1_test5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test8_256128.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train_cvl1_test8_256128.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test9.py" beforeDir="false" afterPath="$PROJECT_DIR$/gaitnet/train/FVG-NEW/train_cvl1_test9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/segmentation/process-cb.py" beforeDir="false" afterPath="$PROJECT_DIR$/segmentation/process-cb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/segmentation/process-fvg.py" beforeDir="false" afterPath="$PROJECT_DIR$/segmentation/process-fvg.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,22 +52,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/veri.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-new_data-padtopdown-test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="118">
+              <caret line="278" column="33" lean-forward="true" selection-start-line="278" selection-start-column="33" selection-end-line="278" selection-end-column="33" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#22162#23345#0" />
+                <element signature="e#23694#24835#0" />
+                <element signature="e#25147#27339#0" />
+                <element signature="e#27378#28480#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo/run.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/dataloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="405">
+              <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#7852#7975#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,11 +117,17 @@
       <find>set</find>
       <find>set_de</find>
       <find>encoder</find>
+      <find>itr</find>
+      <find>data_type</find>
+      <find>CASIAB</find>
+      <find>is_train_data</find>
+      <find>__getitem__</find>
     </findStrings>
     <replaceStrings>
       <replace>frames</replace>
       <replace>fa</replace>
       <replace>fg</replace>
+      <replace>subjects</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -122,11 +163,15 @@
         <option value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" />
         <option value="$PROJECT_DIR$/gaitnet/train/CASIAB/main4-new-padtopdown.py" />
         <option value="$PROJECT_DIR$/demo/run.py" />
+        <option value="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/dataloader.py" />
+        <option value="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/new_code.py" />
+        <option value="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-new_data-padtopdown-test.py" />
+        <option value="$PROJECT_DIR$/utils/dataloader.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="960" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-4" />
     <option name="y" value="28" />
     <option name="width" value="964" />
     <option name="height" value="1056" />
@@ -147,11 +192,6 @@
             <path>
               <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
               <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -165,7 +205,27 @@
               <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
               <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
               <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="CASIAB" type="462c0819:PsiDirectoryNode" />
+              <item name="CASIAB-NEW" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="CASIAB-NEW" type="462c0819:PsiDirectoryNode" />
+              <item name="ABLATION-TABLE2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="gaitnet" type="462c0819:PsiDirectoryNode" />
+              <item name="train" type="462c0819:PsiDirectoryNode" />
+              <item name="CASIAB-OLD" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GaitNet-CVPR2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GaitNet-CVPR2019" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,18 +243,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2" />
+      <recent name="$PROJECT_DIR$/gaitnet/train/FVG" />
+      <recent name="$PROJECT_DIR$/gaitnet/inference/FVG" />
+      <recent name="$PROJECT_DIR$/gaitnet/train" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dataset" />
       <recent name="$PROJECT_DIR$/gaitnet/train/CASIAB" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/segmentation" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gaitnet/inference/FVG" />
-      <recent name="$PROJECT_DIR$/gaitnet/train/FVG" />
-      <recent name="$PROJECT_DIR$/gaitnet/train" />
-      <recent name="$PROJECT_DIR$/gaitnet/inference" />
-      <recent name="$PROJECT_DIR$/gaitnet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -209,7 +269,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main4-new-padtopdown">
+  <component name="RunManager" selected="Python.old_code-new_data-padtopdown-test">
+    <configuration name="dataloader" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GaitNet-CVPR2019" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/dataloader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main4-new-padtopdown" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GaitNet-CVPR2019" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -276,8 +358,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="old_code-new_data-padtopdown-test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GaitNet-CVPR2019" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-new_data-padtopdown-test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.old_code-new_data-padtopdown-test" />
+        <item itemvalue="Python.dataloader" />
         <item itemvalue="Python.main4-new-padtopdown" />
         <item itemvalue="Python.main4-training-on-old" />
         <item itemvalue="Python.main4" />
@@ -301,23 +407,24 @@
       <workItem from="1559873240498" duration="6326000" />
       <workItem from="1559934731940" duration="518000" />
       <workItem from="1559935416647" duration="609000" />
+      <workItem from="1559943060258" duration="1456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115873000" />
+    <option name="totallyTimeSpent" value="124357000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="28" width="964" height="1056" extended-state="4" />
+    <frame x="-4" y="28" width="964" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.3835165" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5767367" visible="true" weight="0.43296704" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.42326334" side_tool="true" weight="0.2802198" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989011" weight="0.5369718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989011" visible="true" weight="0.3588362" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39655173" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -325,9 +432,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50109893" side_tool="true" weight="0.32751092" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26293105" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.26128018" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969433" />
-      <window_info anchor="bottom" id="File Transfer" order="13" visible="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3286638" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -369,23 +476,15 @@
     </ignored-roots>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$old_code_new_data_padtopdown_test.coverage" NAME="old_code-new_data-padtopdown-test Coverage Results" MODIFIED="1559950578789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2" />
     <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$train_cvl1_test5.coverage" NAME="train_cvl1_test5 Coverage Results" MODIFIED="1559762158550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
     <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$train.coverage" NAME="train Coverage Results" MODIFIED="1559830662504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
     <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$main4.coverage" NAME="main4 Coverage Results" MODIFIED="1559873412801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
+    <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$dataloader.coverage" NAME="dataloader Coverage Results" MODIFIED="1559948514964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$main4_new_padtopdown.coverage" NAME="main4-new-padtopdown Coverage Results" MODIFIED="1559892834647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
     <SUITE FILE_PATH="coverage/GaitNet_CVPR2019$main4_training_on_old.coverage" NAME="main4-training-on-old Coverage Results" MODIFIED="1559873685436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gaitnet/train/CASIAB" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/utils/tensorboard/__init__.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/argparse.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1350" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/posixpath.py" />
-    <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/utils/data/sampler.py" />
-    <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/CB/MAIN-CB/train_3264_demo.py" />
-    <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/FVG/MAIN-FVG/train_3264_test.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/nn/modules/conv.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/threading.py" />
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/nn/parallel/parallel_apply.py" />
@@ -470,20 +569,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/README.md" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test9.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test11.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="335" lean-forward="true" selection-start-line="335" selection-end-line="335" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test9.py" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test11.py" />
     <entry file="file://$PROJECT_DIR$/demo/enroll.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -518,23 +605,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/utils/helper.py" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test10.py" />
     <entry file="file://$PROJECT_DIR$/segmentation/mrcnn_resnet50_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -544,26 +617,15 @@
     </entry>
     <entry file="file:///media/tony/Universe/GaitNet-Pytorch/EXPERIMENTS/FVG/TABLE-6/GaitNet/train_.py" />
     <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4.-new-padtopdownpy" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-          <folding>
-            <element signature="e#120#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train_cvl1_test5.py" />
     <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/old_code.py" />
     <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/.directory" />
     <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/main4-training-on-old.py" />
-    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data-padtopdown.py">
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB/old_code-new_data-padtopdown.py" />
+    <entry file="file://$PROJECT_DIR$/demo/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="234" selection-start-line="234" selection-end-line="234" />
-          <folding>
-            <element signature="e#957#8905#0" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
@@ -576,10 +638,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/run.py">
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/FVG/train6_test_V2.py" />
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/new_code.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/torchvisiontest/lib/python3.7/site-packages/torch/nn/utils/rnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="231">
+          <caret line="321" column="4" selection-start-line="321" selection-start-column="4" selection-end-line="321" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/new_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding>
+            <element signature="e#119#132#0" expanded="true" />
+            <element signature="e#5153#7629#0" />
+            <element signature="e#7673#11547#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/dataloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#7852#7975#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaitnet/train/CASIAB-NEW/ABLATION-TABLE2/old_code-new_data-padtopdown-test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="278" column="33" lean-forward="true" selection-start-line="278" selection-start-column="33" selection-end-line="278" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#22162#23345#0" />
+            <element signature="e#23694#24835#0" />
+            <element signature="e#25147#27339#0" />
+            <element signature="e#27378#28480#0" />
+          </folding>
         </state>
       </provider>
     </entry>

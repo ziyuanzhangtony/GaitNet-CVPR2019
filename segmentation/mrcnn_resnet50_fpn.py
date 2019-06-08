@@ -114,7 +114,7 @@ class MRCNN():
             crop = self.__bbox_crop(img,box)
 
 
-            if dataset == 'FVG':
+            if dataset == 'FVG-NEW':
                 if self.cont:
                     if not self.__out_of_frame(silhouette,out_of_frame_space):
                             segmentations_part.append(segmentation_)

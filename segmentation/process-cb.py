@@ -13,7 +13,7 @@ in_data_root = '/home/tony/Documents/CASIA-B/videos'
 seg_out_data_root = '/home/tony/Documents/CASIA-B-/SEG/'
 sil_out_data_root = '/home/tony/Documents/CASIA-B-/SIL/'
 crop_out_data_root = '/home/tony/Documents/CASIA-B-/CROP/'
-# out_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG/SEG/'
+# out_data_root = '/media/tony/MyBook-MSU-CVLAB/FVG-NEW/SEG/'
 
 if_gpu = True
 os.environ["CUDA_VISIBLE_DEVICES"] = '0'
