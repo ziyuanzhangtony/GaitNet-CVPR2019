@@ -1,26 +1,17 @@
 import random
 import os
-import numpy as np
-import torch
-from torchvision import transforms
-import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc
-from scipy import spatial
-import torch.nn as nn
 import torch.optim as optim
 from torchvision.utils import make_grid
 import argparse
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
-# from tensorboardX import SummaryWriter
-
 from utils.dataloader import CASIAB
-
+from utils.compute import *
 import torch.backends.cudnn as cudnn
 # cudnn.deterministic = True
 cudnn.benchmark = True
-torch.cuda.set_device(0)
 
+torch.cuda.set_device(0)
 
 def init_weights(m):
     classname = m.__class__.__name__
@@ -30,246 +21,9 @@ def init_weights(m):
     elif classname.find('BatchNorm') != -1:
         m.weight.data.normal_(1.0, 0.02)
         m.bias.data.fill_(0)
-
-def process_confusion_matrix(matrix,n_class,n_sample):
-    matrix = np.reshape(matrix,(n_class*n_class*n_sample))
-    def make_labels():
-        matrix = [np.eye(n_class, n_class)[j] for j in range(n_class) for _ in range(n_sample)]
-        return np.concatenate(matrix)
-    labels = make_labels()
-    labels = np.reshape(labels,(n_class*n_class*n_sample))
-    fpr, tpr, _ = roc_curve(labels,matrix)
-    roc_auc = auc(fpr, tpr)
-    return fpr, tpr,roc_auc
-
-def plot_roc(fpr,tpr,roc_auc):
-    plt.figure()
-    lw = 3
-    plt.plot(fpr, tpr, color='darkorange',
-             lw=lw, label='ROC curve (AUC = %0.2f)' % roc_auc)
-    plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.01])
-    plt.xlabel('False Alarm Rate/ False Positive Rate')
-    plt.ylabel('True Accept Rate/ True Positive Rate')
-    plt.title('ROC')
-    plt.legend(loc="lower right")
-    plt.show()
-
-def find_idx(fpr,tpr,threthold=[0.01,0.05,0.1],ifround=True):
-    outptut = []
-    for i in threthold:
-        item = fpr[fpr<i+0.005].max()
-        idx = np.where(fpr==item)
-        val = tpr[idx][-1]
-        if ifround:
-            val = round(val,2)
-        outptut.append(val)
-    return outptut
-
-def calculate_cosine_similarity(a, b):
-    score = 1 - spatial.distance.cosine(a, b)
-    return score
-
-def calculate_identication_rate_single(glrs,aprb,trueid,rank=1):
-    scores = []
-    for i in glrs:
-        scores.append(calculate_cosine_similarity(i,aprb))
-    max_val = max(scores)
-    max_idx = scores.index(max_val)
-
-    right,predicted = trueid,max_idx
-    print(right,predicted )
-
-
-    if max_idx in trueid:
-        return 1,[right,predicted]
-    else:
-        return 0,[right,predicted]
-
-def adjust_white_balance(x):
-
-    avgR = np.average(x[0,:,:])
-    avgG = np.average(x[1,:,:])
-    avgB = np.average(x[2,:,:])
-
-    avg = (avgB + avgG + avgR) / 3
-
-    x[0,:,:] = np.minimum(x[0] * (avg / avgR), 1)
-    x[1,:,:] = np.minimum(x[1] * (avg / avgG), 1)
-    x[2,:,:] = np.minimum(x[2] * (avg / avgB), 1)
-
-    return x
-
-def adjust_(x):
-    x = transforms.functional.adjust_brightness(x, 1.5)
-    x = transforms.functional.adjust_contrast(x, 1.5)
-    return x
 #################################################################################################################
 
-class vgg_layer(nn.Module):
-    def __init__(self, nin, nout):
-        super(vgg_layer, self).__init__()
-        self.main = nn.Sequential(
-                nn.Conv2d(nin, nout, 3, 1, 1),
-                nn.BatchNorm2d(nout),
-                nn.LeakyReLU(0.2)
-                )
-
-    def forward(self, input):
-        return self.main(input)
-class dcgan_conv(nn.Module):
-    def __init__(self, nin, nout):
-        super(dcgan_conv, self).__init__()
-        self.main = nn.Sequential(
-                nn.Conv2d(nin, nout, 4, 2, 1),
-                nn.BatchNorm2d(nout),
-                nn.LeakyReLU(0.2),
-                )
-
-    def forward(self, input):
-        return self.main(input)
-class dcgan_upconv(nn.Module):
-    def __init__(self, nin, nout):
-        super(dcgan_upconv, self).__init__()
-        self.main = nn.Sequential(
-                nn.ConvTranspose2d(nin, nout, 4, 2, 1,),
-                nn.BatchNorm2d(nout),
-                nn.LeakyReLU(0.2),
-                )
-
-    def forward(self, input):
-        return self.main(input)
-class encoder(nn.Module):
-    def __init__(self, nc=3):
-        super(encoder, self).__init__()
-        self.em_dim = opt.em_dim
-        nf = 64
-        self.main = nn.Sequential(
-            dcgan_conv(nc, nf),
-            vgg_layer(nf, nf),
-
-            dcgan_conv(nf, nf * 2),
-            vgg_layer(nf * 2, nf * 2),
-
-            dcgan_conv(nf * 2, nf * 4),
-            vgg_layer(nf * 4, nf * 4),
-
-            dcgan_conv(nf * 4, nf * 8),
-            vgg_layer(nf * 8, nf * 8),
-
-            vgg_layer(nf * 8, nf * 8),
-            # vgg_layer(nf * 8, nf * 8),
-
-            # nn.Conv1d(nf * 8, self.em_dim, 4, 1, 0),
-            # nn.BatchNorm2d(self.em_dim),
-        )
-
-        self.flatten = nn.Sequential(
-            nn.Linear(nf * 8 * 2 * 4,self.em_dim),
-            nn.BatchNorm1d(self.em_dim),
-        )
-
-        # self.ha_fc = nn.Sequential(
-        #     nn.LeakyReLU(),
-        #     nn.Linear(self.em_dim, self.em_dim // 2),
-        #     nn.BatchNorm1d(self.em_dim // 2),
-        #
-        #     nn.LeakyReLU(),
-        #     nn.Linear(self.em_dim // 2, self.em_dim // 2),
-        #     nn.BatchNorm1d(self.em_dim // 2),
-        #
-        #     nn.LeakyReLU(),
-        #     nn.Linear(self.em_dim // 2, opt.ha_dim),
-        #     nn.BatchNorm1d(opt.ha_dim)
-        # )
-
-        # self.hg_fc = nn.Sequential(
-        #     nn.LeakyReLU(),
-        #     nn.Linear(self.em_dim, self.em_dim // 2),
-        #     nn.BatchNorm1d(self.em_dim // 2),
-        #
-        #     nn.LeakyReLU(),
-        #     nn.Linear(self.em_dim // 2, self.em_dim // 2),
-        #     nn.BatchNorm1d(self.em_dim // 2),
-        #
-        #     nn.LeakyReLU(),
-        #     nn.Linear(self.em_dim // 2, opt.hg_dim),
-        #     nn.BatchNorm1d(opt.hg_dim)
-        # )
-
-    def forward(self, input):
-        embedding = self.main(input).view(-1, 64 * 8 * 2 * 4)
-        embedding = self.flatten(embedding)
-        ha, hg = torch.split(embedding, [opt.ha_dim, opt.hg_dim], dim=1)
-        return ha, hg, embedding
-
-
-class decoder(nn.Module):
-    def __init__(self, nc=3):
-        super(decoder, self).__init__()
-        nf = 64
-        self.em_dim = opt.em_dim
-
-        self.trans = nn.Sequential(
-            nn.Linear(self.em_dim, nf * 8 * 2 * 4),
-            nn.BatchNorm1d(nf * 8 * 2 * 4),
-        )
-
-        self.main = nn.Sequential(
-            # nn.ConvTranspose2d(self.em_dim, nf * 8, 4, 1, 0),
-            # nn.BatchNorm2d(nf * 8),
-            nn.LeakyReLU(0.2),
-            # vgg_layer(nf * 8, nf * 8),
-
-            dcgan_upconv(nf * 8, nf * 4),
-            # vgg_layer(nf * 4, nf * 4),
-
-            dcgan_upconv(nf * 4, nf * 2),
-            # vgg_layer(nf * 2, nf * 2),
-
-            dcgan_upconv(nf * 2, nf),
-            # vgg_layer(nf, nf),
-
-            nn.ConvTranspose2d(nf, nc, 4, 2, 1),
-            nn.Sigmoid()
-            # because image pixels are from 0-1, 0-255
-        )
-
-
-
-    def forward(self, ha, hg):
-        hidden = torch.cat([ha, hg], 1).view(-1, opt.em_dim)
-        small = self.trans(hidden).view(-1, 64 * 8, 4, 2)
-        img = self.main(small)
-        return img
-
-class lstm(nn.Module):
-    def __init__(self, hidden_dim=128, tagset_size=74):
-        super(lstm, self).__init__()
-        self.source_dim = opt.hg_dim
-        self.hidden_dim = hidden_dim
-        self.tagset_size = tagset_size
-        self.lens = 0
-        self.lstm = nn.LSTM(self.source_dim, hidden_dim, 3)
-        self.fc1 = nn.Sequential(
-            nn.BatchNorm1d(hidden_dim),
-            nn.Linear(hidden_dim, hidden_dim),
-            nn.BatchNorm1d(hidden_dim),
-            nn.LeakyReLU(0.2),
-
-        )
-        self.main = nn.Sequential(
-            # nn.Dropout(),
-            nn.Linear(self.hidden_dim, tagset_size),
-            nn.BatchNorm1d(tagset_size),
-        )
-    def forward(self, batch):
-        lens = batch.shape[0]
-        lstm_out, _ = self.lstm(batch.view(lens,-1,self.source_dim))
-        lstm_out_test = self.fc1(torch.mean(lstm_out.view(lens,-1,self.hidden_dim),0))
-        lstm_out_train = self.main(lstm_out_test).view(-1, self.tagset_size)
-        return lstm_out_train,lstm_out_test,lstm_out
+from utils.modules_casiab_tab2 import *
 
 #################################################################################################################
 # HYPER PARAMETERS INITIALIZING
@@ -285,8 +39,8 @@ parser.add_argument('--data_root',
 parser.add_argument('--seed', default=1, type=int, help='manual seed')
 parser.add_argument('--batch_size', default=16, type=int, help='batch size')
 parser.add_argument('--em_dim', type=int, default=320, help='size of the pose vector')
-parser.add_argument('--ha_dim', type=int, default=288, help='size of the appearance vector')
-parser.add_argument('--hg_dim', type=int, default=32, help='size of the gait vector')
+parser.add_argument('--fa_dim', type=int, default=288, help='size of the appearance vector')
+parser.add_argument('--fg_dim', type=int, default=32, help='size of the gait vector')
 parser.add_argument('--im_height', type=int, default=64, help='the height of the input image to network')
 parser.add_argument('--im_width', type=int, default=32, help='the width of the input image to network')
 parser.add_argument('--max_step', type=int, default=20, help='maximum distance between frames')
@@ -296,7 +50,7 @@ parser.add_argument('--num_train',type=int, default=74, help='')
 parser.add_argument('--glr_views',type=list, default=[90], help='')
 parser.add_argument('--prb_views',type=list, default=[90], help='')
 
-time_now = 'old_code-new_data-padtopdown'
+time_now = 'old_code-new_data-padtopdown-olddataloader'
 parser.add_argument('--signature', default=time_now)
 parser.add_argument('--savedir', default='./runs')
 opt = parser.parse_args()
@@ -309,18 +63,13 @@ torch.cuda.manual_seed_all(opt.seed)
 os.makedirs('%s/modules/%s'%(opt.savedir,opt.signature), exist_ok=True)
 #################################################################################################################
 # MODEL PROCESS
-netE = encoder()
-netD = decoder()
-lstm = lstm()
+netE = encoder(opt)
+netD = decoder(opt)
+lstm = lstm(opt)
 netE.apply(init_weights)
 netD.apply(init_weights)
 lstm.apply(init_weights)
-if opt.siter is not 0:
-    checkpoint = torch.load('%s/modules/%s/%d.pickle' % (opt.savedir,opt.signature, opt.siter))
-    netE.load_state_dict(checkpoint['netE'])
-    netD.load_state_dict(checkpoint['netD'])
-    lstm.load_state_dict(checkpoint['lstm'])
-    print('model loadinged successfully')
+
 optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
 optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
 optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
@@ -420,36 +169,6 @@ def make_analogy(x):
 
     img = make_grid(to_plot,9)
     return img
-
-def eval_lstm_cmc(glr, prb):
-    pb_vecs = []
-    gr_vecs = []
-    for pb in prb:
-        fg_pb = [netE(pb[i].cuda())[1].detach() for i in range(len(pb))]
-        fg_pb = torch.stack(fg_pb, 0).view(len(fg_pb), -1, opt.hg_dim)
-        pb_vec = lstm(fg_pb)[1].detach().cpu().numpy()
-        pb_vecs.append(pb_vec)
-
-    for gr in glr:
-        fg_gr = [netE(gr[i].cuda())[1].detach() for i in range(len(gr))]
-        fg_gr = torch.stack(fg_gr, 0).view(len(fg_gr), -1, opt.hg_dim)
-        gr_vec = lstm(fg_gr)[1].detach().cpu().numpy()
-        gr_vecs.append(gr_vec)
-
-    scores_all = []
-    for pb_idx,pv in enumerate(pb_vecs):
-        scores_this_pv = []
-        for gv_idx,gv in enumerate(gr_vecs):
-                score = []
-                for i in range(len(pv)):
-                    id = i
-                    id_range = list(range(id,id+1))
-                    score.append(calculate_identication_rate_single(gv, pv[i], id_range)[0])
-                score = sum(score) / float(len(score))
-                scores_this_pv.append(score)
-        scores_this_pv = sum(scores_this_pv) / float(len(scores_this_pv))
-        scores_all.append(scores_this_pv)
-    return scores_all
 
 #################################################################################################################
 # TRAINING FUNCTION DEFINE
@@ -574,14 +293,35 @@ def train_lstm(x_n,x_c,x_mx,l):
 # FUN TRAINING TIME !
 train_eval = test_data.get_eval_data(True)
 test_eval = test_data.get_eval_data(False)
+# max_test = 0
+# max_test_file = ''
+# module_names = os.listdir('%s/modules/%s'%(opt.savedir,opt.signature))
+# module_names = sorted( module_names, key=lambda a: int(a.split(".")[0]) )
+total = 0
+cnt = 0
+for name_idx in range(10000,15000,200):
+    name = '%d.pickle'%(name_idx)
+    full_name = os.path.join('%s/modules/%s'%(opt.savedir,opt.signature),name)
+    checkpoint = torch.load(full_name)
+    netE.load_state_dict(checkpoint['netE'])
+    netD.load_state_dict(checkpoint['netD'])
+    lstm.load_state_dict(checkpoint['lstm'])
 
-with torch.no_grad():
-    netD.eval()
-    netE.eval()
-    lstm.eval()
-    scores_cmc_cl_train = eval_lstm_cmc(train_eval[0], train_eval[1])
-    scores_cmc_cl_test = eval_lstm_cmc(test_eval[0], test_eval[1])
-    print(scores_cmc_cl_train)
-    print(scores_cmc_cl_test)
+    with torch.no_grad():
+        netD.eval()
+        netE.eval()
+        lstm.eval()
+        scores_cmc_cl_train = eval_cmc(train_eval[0], train_eval[1],[netE, lstm], opt, [90], [90], True)
+        scores_cmc_cl_test = eval_cmc(test_eval[0], test_eval[1], [netE, lstm], opt, [90], [90], True)
+        total += scores_cmc_cl_test [0]
+        cnt+=1
+        print(name,total,cnt)
+        # if scores_cmc_cl_test[0] > max_test:
+        #     max_test =scores_cmc_cl_test[0]
+        #     max_test_file = name
+        # print(name,scores_cmc_cl_train,scores_cmc_cl_test,max_test)
+print(total/cnt)
+
+
 
 

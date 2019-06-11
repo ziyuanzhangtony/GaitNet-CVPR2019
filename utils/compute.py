@@ -81,7 +81,7 @@ def calculate_identication_rate_single(glrs, aprb, trueid, rank=1):
     max_idx = scores.index(max_val)
 
     right, predicted = trueid, max_idx
-    print(right, predicted)
+    # print(right, predicted)
 
     if max_idx in trueid:
         return 1, [right, predicted]
