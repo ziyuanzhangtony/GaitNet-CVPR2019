@@ -81,7 +81,7 @@ def calculate_identication_rate_single(glrs, aprb, trueid, rank=1):
     max_idx = scores.index(max_val)
 
     right, predicted = trueid, max_idx
-    # print(right, predicted)
+    print(right, predicted)
 
     if max_idx in trueid:
         return 1, [right, predicted]
@@ -115,6 +115,7 @@ def eval_cmc(glr, prb, networks, opt, glr_views, prb_views, is_same_view):
     netE, lstm = networks
     pb_vecs = []
     gr_vecs = []
+    groundtruth_predicted = []
     for pb in prb:
         fg_pb = [netE(pb[i].cuda())[1].detach() for i in range(len(pb))]
         fg_pb = torch.stack(fg_pb, 0).view(len(fg_pb), -1, opt.fg_dim)
@@ -138,6 +139,7 @@ def eval_cmc(glr, prb, networks, opt, glr_views, prb_views, is_same_view):
                         id = i
                         id_range = list(range(id, id + 1))
                         score.append(calculate_identication_rate_single(gv, pv[i], id_range)[0])
+                        groundtruth_predicted.append(calculate_identication_rate_single(gv, pv[i], id_range)[1])
                     score = sum(score) / float(len(score))
                     scores_this_pv.append(score)
 
@@ -148,10 +150,11 @@ def eval_cmc(glr, prb, networks, opt, glr_views, prb_views, is_same_view):
                         id = i
                         id_range = list(range(id, id + 1))
                         score.append(calculate_identication_rate_single(gv, pv[i], id_range)[0])
+                        groundtruth_predicted.append(calculate_identication_rate_single(gv, pv[i], id_range)[1])
                     score = sum(score) / float(len(score))
                     scores_this_pv.append(score)
 
         scores_this_pv = sum(scores_this_pv) / float(len(scores_this_pv))
         scores_all.append(scores_this_pv)
-    return scores_all
+    return scores_all,groundtruth_predicted
 

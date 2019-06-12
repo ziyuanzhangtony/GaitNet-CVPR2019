@@ -17,7 +17,6 @@ class encoder(nn.Module):
         self.flatten = nn.Sequential(
             nn.Linear(nf * 8 * 2 * 4,self.em_dim),
             nn.BatchNorm1d(self.em_dim),
-            # nn.LeakyReLU(0.2),
         )
     def forward(self, input):
         embedding = self.main(input).view(-1, 64 * 8 * 2 * 4)
@@ -74,6 +73,9 @@ class lstm(nn.Module):
     def forward(self, batch):
         lens = batch.shape[0]
         lstm_out, _ = self.lstm(batch.view(lens,-1,self.source_dim))
+
+        # lstm_out_test = self.fc1(lstm_out.view(lens,-1,self.hidden_dim)[-1])
+
         lstm_out_test = self.fc1(torch.mean(lstm_out.view(lens,-1,self.hidden_dim),0))
         lstm_out_train = self.main(lstm_out_test).view(-1, self.tagset_size)
         return lstm_out_train,lstm_out_test

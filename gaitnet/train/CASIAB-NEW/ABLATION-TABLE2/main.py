@@ -16,12 +16,11 @@ gpu_num = int(input('Tell me the gpu you wanna use for this experiment:'))
 parser.add_argument('--gpu', type=int, default=gpu_num)
 parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
 parser.add_argument('--data_root',
-                    default='/home/tony/Research/CB-RGB-MRCNN/',
+                    default='/home/tony/Research/CB-SEG-MRCNN/',
                     # default='/home/tony/Research/CB-RGB-BS/',
                      help='root directory for data')
 parser.add_argument('--seed', default=1, type=int, help='manual seed')
 parser.add_argument('--batch_size', default=32, type=int, help='batch size')
-
 parser.add_argument('--em_dim', type=int, default=320, help='size of the pose vector')
 parser.add_argument('--fa_dim', type=int, default=288, help='size of the appearance vector')
 parser.add_argument('--fg_dim', type=int, default=32, help='size of the gait vector')
@@ -31,9 +30,15 @@ parser.add_argument('--im_width', type=int, default=32, help='the width of the i
 parser.add_argument('--clip_len', type=int, default=20, help='maximum distance between frames')
 parser.add_argument('--data_threads', type=int, default=8, help='number of parallel data loading threads')
 parser.add_argument('--num_train',type=int, default=100, help='')
+parser.add_argument('--savedir', default='./runs')
+parser.add_argument('--signature', default='100fortraining-new-benchmark')
+opt = parser.parse_args()
+print(opt)
+print("Random Seed: ", opt.seed)
+
 
 train_structure = {
-    'clip1': ([90], ['nm','cl'], list(range(1, 2 + 1))),
+    'clip1': ([90], ['cl','nm'], list(range(1, 2 + 1))),
     'clip2': ([90], ['cl','nm'], list(range(1, 2 + 1)))
 }
 
@@ -42,12 +47,6 @@ test_structure = {
     'probe': ([90], ['cl'], [1]),
 }
 
-parser.add_argument('--savedir', default='./runs')
-parser.add_argument('--signature', default='100fortraining-new-benchmark-onemorelayer')
-opt = parser.parse_args()
-print(opt)
-print("Random Seed: ", opt.seed)
-#################################################################################################################
 
 torch.cuda.set_device(opt.gpu)
 
@@ -113,17 +112,13 @@ optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999),weig
 # optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
 
 mse_loss = nn.MSELoss()
-bce_loss = nn.BCELoss()
 cse_loss = nn.CrossEntropyLoss()
-# trp_loss = nn.TripletMarginLoss(margin=2.0)
+
 netE.cuda()
 netD.cuda()
 lstm.cuda()
 mse_loss.cuda()
-bce_loss.cuda()
 cse_loss.cuda()
-# trp_loss.cuda()
-
 
 # #################################################################################################################
 # DATASET PREPARATION
@@ -166,7 +161,6 @@ def write_tfboard(vals,itr,name):
 def train_main(Xn, Xc, Xmx, l):
 
     Xn, Xc, Xmx = Xn.transpose(0, 1), Xc.transpose(0, 1), Xmx.transpose(0, 1)
-    accu = []
     hgs_n = []
     hgs_c = []
 
@@ -181,7 +175,6 @@ def train_main(Xn, Xc, Xmx, l):
         xmx0, xmx1 = Xmx[rdm], Xmx[i]
         hamx0, hgmx0 = netE(xmx0)
         hamx1, hgmx1 = netE(xmx1)
-        # accu.append(hamx1)
         # ------------------------------------------------------------------
         xmx1_ = netD(hamx0, hgmx1)
         self_rec_loss += mse_loss(xmx1_, xmx1)
@@ -216,10 +209,10 @@ def train_main(Xn, Xc, Xmx, l):
         hgs_mx.append(netE(xmx)[1])
         lstm_out_mx = lstm(torch.stack(hgs_mx))[0]
         cse += cse_loss(lstm_out_mx, l) * factor
-    cse /= opt.clip_len
-    cse *= 0.1
+    cse /= opt.clip_len # mean
+    # cse *= 0.1
 
-    loss = self_rec_loss + loss_out_haha + cse
+    loss = self_rec_loss + loss_out_haha * 0.01 + cse * 0.1
 
     loss.backward()
     optimizerE.step()
@@ -249,8 +242,8 @@ while True:
             netD.eval()
             netE.eval()
             lstm.eval()
-            scores_cmc_cl_train = eval_cmc(train_eval[0], train_eval[1],[netE, lstm], opt, [90], [90], True)
-            scores_cmc_cl_test = eval_cmc(test_eval[0], test_eval[1], [netE, lstm], opt, [90], [90], True)
+            scores_cmc_cl_train, _ = eval_cmc(train_eval[0], train_eval[1],[netE, lstm], opt, [90], [90], True)
+            scores_cmc_cl_test, _ = eval_cmc(test_eval[0], test_eval[1], [netE, lstm], opt, [90], [90], True)
             write_tfboard(scores_cmc_cl_train, itr, name='train_accu_rank1_cl')
             write_tfboard(scores_cmc_cl_test, itr, name='test_accu_rank1_cl')
             print(scores_cmc_cl_train,scores_cmc_cl_test)

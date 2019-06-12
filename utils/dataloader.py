@@ -1,4 +1,6 @@
 import os
+import random
+
 import numpy as np
 import torch
 from torchvision import transforms
@@ -145,6 +147,8 @@ class CASIAB(object):
         def read_video(si, con, sei, vi):
             folder_path = os.path.join(self.data_root, '%03d-%s-%02d-%03d' % (si, con, sei, vi))
             frame_names = sorted(os.listdir(folder_path))
+            # random.shuffle(frame_names)
+            # print(frame_names)
             frame_names = [f for f in frame_names if f.endswith('.png')]
             video_shape = [len(frame_names), 3, self.im_height, self.im_width]
 
