@@ -74,16 +74,21 @@ class VideoCapture:
             self.vid.release()
 
 vid = VideoCapture(args.camera_idx)
-# vid = VideoCapture("C:/Users/Hao/Videos/WIN_20190517_14_36_42_Pro.mp4")
+# vid = VideoCapture("/home/tony/Dropbox/GaitNet/PRODUCT/testing_2019/Camera/012.MP4")
 
 database = load_database()
 def check_database():
     if len(database) == 0:
+        print("====================================")
         print("Database is empty")
+        print("====================================")
         print()
-    print("Database:")
-    for k, v in database.items():
-        print(k)
+    else:
+        print("====================================")
+        print("Database:")
+        print("====================================")
+        for k, v in database.items():
+            print(k)
 def create_enroll_wind():
     enroll.main(database, vid, mrcnn, gaitnet, args)
 def create_verifi_wind():

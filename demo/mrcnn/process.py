@@ -17,7 +17,8 @@ transform = transforms.Compose([
 
 def get_seg_batch(frames, batch_size):
     # coco_demo.is_continue = True #important
-    pbbox = tuple()
+    mrcnn.reset()
+    # pbbox = tuple()
     segs = []
     time_start = time.time()
     idx = 0
@@ -36,23 +37,18 @@ def get_seg_batch(frames, batch_size):
             sub_frames = frames[idx:idx+batch_size]
             print("MRCNN Progress:{}:{} / {}".format(idx, idx + batch_size, len(frames)))
         idx+=batch_size
-        time_test_s = time.time()
         with torch.no_grad():
             new_format = []
             for frame in sub_frames:
                 frame = transform(frame)
                 frame = frame.cuda()
                 new_format.append(frame)
-            time_test1_s = time.time()
-            composites, silhouettes, crops = mrcnn.process_batch(new_format, 0.9, 1, 10, 'FVG-NEW')
-            print("t1:" + str(time.time()-time_test1_s))
+            composites, silhouettes, crops = mrcnn.process_batch(new_format, 0.9, 1, 10, 'FVG')
             for composite in composites:
                 if len(composite) > 0:
                     segs.append(composite.cpu())
-        print("t:" + str(time.time()-time_test_s))
 
     duration = round(time.time() - time_start,2)
-    print("d:" + str(duration))
     print("MRCNN TIME:{} seconds".format(duration))
     print("MRCNN FPS:", round(len(frames) / duration,2))
     print()

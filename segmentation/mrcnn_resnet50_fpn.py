@@ -94,9 +94,7 @@ class MRCNN():
         silhouettes_part = []
         crops_part = []
 
-        time_test1_s = time.time()
         result = self.model(batch[:]) # seems the batch is mutable here
-        print("t2:" + str(time.time()-time_test1_s))
 
         for img, one in zip(batch, result):
 
@@ -114,7 +112,7 @@ class MRCNN():
             crop = self.__bbox_crop(img,box)
 
 
-            if dataset == 'FVG-NEW':
+            if dataset == 'FVG':
                 if self.cont:
                     if not self.__out_of_frame(silhouette,out_of_frame_space):
                             segmentations_part.append(segmentation_)

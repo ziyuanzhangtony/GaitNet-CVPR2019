@@ -2,6 +2,9 @@ from tkinter.messagebox import showinfo
 import tkinter
 import PIL.Image, PIL.ImageTk
 import time
+
+import torch
+
 from utils.helper import calculate_cosine_similarity
 time_start = 0
 class App:
@@ -42,8 +45,10 @@ class App:
             return
 
         try:
-            self.segs = self.mrcnn_api.get_seg_batch(self.frames, 10)
-            feature = self.gaitnet_api.main(self.segs)  # from video to feature
+            with torch.no_grad():
+                self.segs = self.mrcnn_api.get_seg_batch(self.frames, 10)
+                feature = self.gaitnet_api.main(self.segs)  # from video to feature
+                torch.cuda.empty_cache()
         except:
             print("Video processing failed. Please record again.")
             self.frames.clear()
