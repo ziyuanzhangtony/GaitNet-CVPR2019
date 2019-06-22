@@ -75,10 +75,64 @@ class lstm(nn.Module):
 
         lstm_out, _ = self.lstm(batch.view(num_frames,-1,self.source_dim))
 
-        # lstm_out_test = self.fc1(lstm_out.view(lens,-1,self.hidden_dim)[-1])
+        lstm_out_test = self.fc1(lstm_out.view(num_frames,-1,self.hidden_dim)[-1])
 
-        lstm_out_test = self.fc1(torch.mean(lstm_out.view(num_frames,-1,self.hidden_dim),0))
+        # lstm_out_test = self.fc1(torch.mean(lstm_out.view(num_frames,-1,self.hidden_dim),0))
 
         lstm_out_train = self.main(lstm_out_test).view(-1, self.tagset_size)
 
         return lstm_out_train, lstm_out_test
+
+
+# class lstm(nn.Module):
+#     def __init__(self, opt):
+#         super(lstm, self).__init__()
+#         self.source_dim = opt.fg_dim
+#         self.hidden_dim = opt.lstm_hidden_dim
+#         self.tagset_size = opt.num_train
+#
+#         self.lstm1 = nn.LSTMCell(self.source_dim , self.hidden_dim)
+#         self.lstm2 = nn.LSTMCell(self.hidden_dim, self.hidden_dim)
+#         self.lstm3 = nn.LSTMCell(self.hidden_dim, self.hidden_dim)
+#
+#         # self.lstm = nn.LSTM(self.source_dim, self.hidden_dim, 3)
+#         self.fc1 = nn.Sequential(
+#             nn.BatchNorm1d(self.hidden_dim),
+#             # nn.Linear(hidden_dim, hidden_dim),
+#             # nn.BatchNorm1d(hidden_dim),
+#             nn.LeakyReLU(0.2),
+#         )
+#         self.main = nn.Sequential(
+#             # nn.Dropout(),
+#             nn.Linear(self.hidden_dim, self.tagset_size),
+#             nn.BatchNorm1d(self.tagset_size),
+#         )
+#     def forward(self, batch):
+#         num_frames = batch.shape[0]
+#         batch_size = batch.shape[1]
+#
+#         # lstm_out, _ = self.lstm(batch.view(num_frames,-1,self.source_dim))
+#
+#         lstm_out = []
+#         h_t = torch.zeros(batch_size, self.hidden_dim, dtype=torch.float).cuda()
+#         c_t = torch.zeros(batch_size, self.hidden_dim, dtype=torch.float).cuda()
+#         h_t2 = torch.zeros(batch_size, self.hidden_dim, dtype=torch.float).cuda()
+#         c_t2 = torch.zeros(batch_size, self.hidden_dim, dtype=torch.float).cuda()
+#         h_t3 = torch.zeros(batch_size, self.hidden_dim, dtype=torch.float).cuda()
+#         c_t3 = torch.zeros(batch_size, self.hidden_dim, dtype=torch.float).cuda()
+#
+#         for input_t in batch:
+#             h_t, c_t = self.lstm1(input_t, (h_t, c_t))
+#             h_t2, c_t2 = self.lstm2(h_t, (h_t2, c_t2))
+#             h_t3, c_t3 = self.lstm2(h_t2, (h_t3, c_t3))
+#             # output = self.linear(h_t2)
+#             lstm_out += [h_t3]
+#         lstm_out = torch.stack(lstm_out, 0)
+#
+#         # lstm_out_test = self.fc1(lstm_out.view(num_frames,-1,self.hidden_dim)[-1])
+#         #
+#         lstm_out_test = self.fc1(torch.mean(lstm_out.view(num_frames,-1,self.hidden_dim),0))
+#
+#         lstm_out_train = self.main(lstm_out_test).view(-1, self.tagset_size)
+#
+#         return lstm_out_train, lstm_out_test

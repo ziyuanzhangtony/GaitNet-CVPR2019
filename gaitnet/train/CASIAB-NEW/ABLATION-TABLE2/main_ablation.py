@@ -14,13 +14,13 @@ from utils.dataloader import get_training_batch
 parser = argparse.ArgumentParser()
 gpu_num = int(input('Tell me the gpu you wanna use for this experiment:'))
 parser.add_argument('--gpu', type=int, default=gpu_num)
-parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
+parser.add_argument('--lr', default=0.001, type=float, help='learning rate')
 parser.add_argument('--data_root',
                     default='/home/tony/Research/CB-SEG-MRCNN/',
                     # default='/home/tony/Research/CB-RGB-BS/',
                      help='root directory for data')
 parser.add_argument('--seed', default=1, type=int, help='manual seed')
-parser.add_argument('--batch_size', default=32, type=int, help='batch size')
+parser.add_argument('--batch_size', default=33, type=int, help='batch size')
 parser.add_argument('--em_dim', type=int, default=320, help='size of the pose vector')
 parser.add_argument('--fa_dim', type=int, default=288, help='size of the appearance vector')
 parser.add_argument('--fg_dim', type=int, default=32, help='size of the gait vector')
@@ -31,7 +31,7 @@ parser.add_argument('--clip_len', type=int, default=20, help='maximum distance b
 parser.add_argument('--data_threads', type=int, default=8, help='number of parallel data loading threads')
 parser.add_argument('--num_train',type=int, default=100, help='')
 parser.add_argument('--savedir', default='./runs')
-parser.add_argument('--signature', default='100fortraining-new-benchmark-lstm')
+parser.add_argument('--signature', default='100fortraining-lstm4')
 opt = parser.parse_args()
 print(opt)
 print("Random Seed: ", opt.seed)
@@ -50,13 +50,14 @@ test_structure = {
 torch.cuda.set_device(opt.gpu)
 
 # cudnn.deterministic = False0
-cudnn.benchmark = True
+# cudnn.benchmark = True
 
 #
 np.random.seed(opt.seed)
 random.seed(opt.seed)
 torch.manual_seed(opt.seed)
 torch.cuda.manual_seed_all(opt.seed)
+cudnn.deterministic = True
 
 # load latest module
 module_save_path = os.path.join(opt.savedir, 'modules', opt.signature)
@@ -158,6 +159,9 @@ def write_tfboard(vals,itr,name):
 #################################################################################################################
 # TRAINING FUNCTION DEFINE
 def train_main(Xn, Xc, Xmx, l):
+    optimizerE.zero_grad()
+    optimizerD.zero_grad()
+    optimizerLstm.zero_grad()
 
     Xn, Xc, Xmx = Xn.transpose(0, 1), Xc.transpose(0, 1), Xmx.transpose(0, 1)
     hgs_n = []
@@ -197,11 +201,11 @@ def train_main(Xn, Xc, Xmx, l):
     # fc = 0
     cse = 0
     for i in range(0, len(Xn)):
-        netE.zero_grad()
-        netD.zero_grad()
-        lstm.zero_grad()
+        # netE.zero_grad()
+        # netD.zero_grad()
+        # lstm.zero_grad()
 
-        factor = (i / 5) ** 2 / 10
+        # factor = (i / 5) ** 2 / 10
         # factor = torch.sigmoid(torch.tensor((i / 5) ** 2 / 10)).cuda()
 
         xmx = Xmx[i]
@@ -211,12 +215,12 @@ def train_main(Xn, Xc, Xmx, l):
     cse += cse_loss(lstm_out_mx, l) #* factor
     # cse /= opt.clip_len # mean
 
-    # loss = self_rec_loss + loss_out_haha * 0.01 + cse * 0.1
-    loss = loss_out_haha * 0.01 + cse * 0.1
+    loss = self_rec_loss + loss_out_haha * 0.01 + cse * 0.1
+    # loss = loss_out_haha * 0.01 + cse * 0.1
 
     loss.backward()
     optimizerE.step()
-    # optimizerD.step()
+    optimizerD.step()
     optimizerLstm.step()
 
     return [self_rec_loss.item(), loss_out_haha.item(), cse.item()]
