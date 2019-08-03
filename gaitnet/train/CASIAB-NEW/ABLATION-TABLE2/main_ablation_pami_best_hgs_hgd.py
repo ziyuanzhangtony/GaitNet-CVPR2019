@@ -10,7 +10,7 @@ from utils.dataloader import CASIAB
 from utils.compute import *
 import torch.backends.cudnn as cudnn
 from torch.utils.tensorboard import SummaryWriter
-from utils.modules_casiab_cvpr2_tab2_lstm_last import *
+from utils.modules_casiab_cvpr2_tab2 import *
 from utils.dataloader import get_training_batch
 from utils.graph import *
 
@@ -52,7 +52,7 @@ parser.add_argument('--signature', default='CVPR'
                                            '-test_len_50'
                                            '-with_factor'
                                            '-hgs_hgd_from_ha'
-                                           '-lstm_last')
+                                           '-test')
 opt = parser.parse_args()
 print(opt)
 print("Random Seed: ", opt.seed)

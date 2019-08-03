@@ -595,8 +595,8 @@ class FVG(object):
         return data1, data2, data3, label
 
 
-    def get_eval_format(self):
-        if is_train_data is True:
+    def get_eval_format(self, gallery, probe_s1, probe_s2):
+        if self.is_train_data is True:
             subjects = self.train_subjects
         else:
             subjects = self.test_subjects
@@ -609,25 +609,23 @@ class FVG(object):
             else:
                 reading_dir = 'session2'
 
-            in_path = os.path.join(self.data_root, reading_dir, '%03d_%02d' % (si_idx, vi_idx))
-            fvg_instance = FVG_instance(folder_path=in_path,
-                                        frame_height=self.im_height,
-                                        frame_width=self.im_width)
-            loader = DataLoader(fvg_instance,
-                                num_workers=8,
-                                batch_size=30,
-                                shuffle=False,
-                                drop_last=False,
-                                pin_memory=True)
+            folder_path = os.path.join(self.data_root, reading_dir, '%03d_%02d' % (si_idx, vi_idx))
 
+            frame_names = sorted(os.listdir(folder_path))
+            frame_names = [f for f in frame_names if f.endswith('.png')]
+            video_shape = [len(frame_names), 3, self.im_height, self.im_width]
             data = []
-            for batch_frame in loader:
-                batch_frame = batch_frame.cuda()
-                data.append(batch_frame)
+            for f in frame_names:
+                try:
+                    img = imread(os.path.join(folder_path, f))
+                    img = self.transform(img)
+                    data.append(img)
+                except:
+                    print('SKIPPED A BAD IMAGE FOUND')
             if len(data):
-                data = torch.cat(data)
+                data = torch.stack(data)
             else:
-                data = torch.zeros([3, self.im_height, self.im_height])
+                data = torch.zeros(video_shape)
             return data
 
         test_data_glr = []
@@ -636,13 +634,13 @@ class FVG(object):
         for i, id in enumerate(subjects):
             test_data_glr.append(read_frames(id, gallery))
             if id in list(range(1, 147 + 1)):
-                probes = probe_session1
+                probes = probe_s1
             else:
-                probes = probe_session2
+                probes = probe_s2
             gt.append(len(probes))
             for j in probes:
                 test_data_prb.append(read_frames(id, j))
-            print('Training data?:', is_train_data, 'Reading', i, 'th subject:', id)
+            print('Training data?:', self.is_train_data, '. Reading', i, 'th subject:', id)
 
         test_data_glr = pad_sequence(test_data_glr)
         test_data_glr = test_data_glr[:70]
@@ -652,6 +650,121 @@ class FVG(object):
                test_data_prb, \
                gt
 
+
+    def get_eval_format_all(self):
+        if self.is_train_data is True:
+            subjects = self.train_subjects
+        else:
+            subjects = self.test_subjects
+
+        gt = []
+
+        def read_frames(si_idx, vi_idx):
+            if si_idx in list(range(1, 147 + 1)):
+                reading_dir = 'session1'
+            else:
+                reading_dir = 'session2'
+
+            folder_path = os.path.join(self.data_root, reading_dir, '%03d_%02d' % (si_idx, vi_idx))
+
+            frame_names = sorted(os.listdir(folder_path))
+            frame_names = [f for f in frame_names if f.endswith('.png')]
+            video_shape = [len(frame_names), 3, self.im_height, self.im_width]
+            data = []
+            for f in frame_names:
+                try:
+                    img = imread(os.path.join(folder_path, f))
+                    img = self.transform(img)
+                    data.append(img)
+                except:
+                    print('SKIPPED A BAD IMAGE FOUND')
+            if len(data):
+                data = torch.stack(data)
+            else:
+                data = torch.zeros(video_shape)
+            return data
+
+        test_data_glr = []
+        test_data_prb = []
+
+        for i, id in enumerate(subjects):
+            test_data_glr.append(read_frames(id, 2))
+            if id in list(range(1, 147 + 1)):
+                session = ['session1']
+                if id in [1, 2, 4, 7, 8, 12, 13, 17, 31, 40, 48, 77]:
+                    session = ['session1', 'session3']
+            else:
+                session = ['session2']
+            probe_cnt = 0
+            for se in session:
+                if se == 'session1' or se == 'session2':
+                    probes = [1]+list(range(3,12+1))
+                else:
+                    probes = list(range(1, 12 + 1))
+                for j in probes:
+                    test_data_prb.append(read_frames(id, j))
+                    probe_cnt+=1
+            gt.append(probe_cnt)
+
+            print('Training data?:', self.is_train_data, '. Reading', i, 'th subject:', id)
+
+        test_data_glr = pad_sequence(test_data_glr)
+        test_data_glr = test_data_glr[:70]
+        test_data_prb = pad_sequence(test_data_prb)
+        test_data_prb = test_data_prb[:70]
+        return test_data_glr, \
+               test_data_prb, \
+               gt
+
+    def get_eval_format_time(self):
+
+        subjects_s3 = [1, 2, 4, 7, 8, 12, 13, 17, 31, 40, 48, 77]
+        subjects = set(self.test_subjects) & set(subjects_s3)
+
+        gt = []
+
+        def read_frames(si_idx, vi_idx, session):
+            reading_dir = session
+            folder_path = os.path.join(self.data_root, reading_dir, '%03d_%02d' % (si_idx, vi_idx))
+
+            frame_names = sorted(os.listdir(folder_path))
+            frame_names = [f for f in frame_names if f.endswith('.png')]
+            video_shape = [len(frame_names), 3, self.im_height, self.im_width]
+            data = []
+            for f in frame_names:
+                try:
+                    img = imread(os.path.join(folder_path, f))
+                    img = self.transform(img)
+                    data.append(img)
+                except:
+                    print('SKIPPED A BAD IMAGE FOUND')
+            if len(data):
+                data = torch.stack(data)
+            else:
+                data = torch.zeros(video_shape)
+            return data
+
+        test_data_glr = []
+        test_data_prb = []
+
+
+
+
+        for i, id in enumerate(subjects):
+            test_data_glr.append(read_frames(id, 2, 'session1'))
+            probes = [2]
+            gt.append(len(probes))
+            for j in probes:
+                test_data_prb.append(read_frames(id, j, 'session3'))
+            print('Training data?:', self.is_train_data, '. Reading', i, 'th subject:', id)
+
+        test_data_glr = pad_sequence(test_data_glr)
+        test_data_glr = test_data_glr[:70]
+        test_data_prb = pad_sequence(test_data_prb)
+        test_data_prb = test_data_prb[:70]
+        return test_data_glr, \
+               test_data_prb, \
+               gt
 
 
     def __len__(self):

@@ -93,8 +93,8 @@ def calculate_identication_rate_single(glrs, aprb, trueid, rank=1):
 def calculate_identication_rate_two(glrs, aprb, trueid, rank=1):
     scores = []
     for i in glrs:
-        score1 = calculate_cosine_similarity(i[:256], aprb[:256]) # fgd_final
-        score2 = calculate_cosine_similarity(i[256:], aprb[256:]) # fgs_mean
+        score1 = calculate_cosine_similarity(i[:256], aprb[:256]) # lstm_final
+        score2 = calculate_cosine_similarity(i[256:], aprb[256:]) # fs_mean
         scores.append(score1+score2)
     max_val = max(scores)
     max_idx = scores.index(max_val)
@@ -109,6 +109,8 @@ def calculate_identication_rate_two(glrs, aprb, trueid, rank=1):
 
 def eval_roc(glr, prb, gt, n_test, networks, opt):
     netE, lstm = networks
+    netE.eval()
+    lstm.eval()
 
     fg_glr = [netE(glr[i].cuda())[1] for i in range(len(glr))]
     # fg_glr = torch.stack(fg_glr, 0).view(len(fg_glr), n_test, opt.fg_dim)
@@ -128,6 +130,41 @@ def eval_roc(glr, prb, gt, n_test, networks, opt):
             obj_arr[j, i] = cs
     fpr, tpr, roc_auc = process_confusion_matrix(obj_arr, n_test, gt)
     return find_idx(fpr, tpr) #, obj_arr
+
+def eval_roc_two(glr, prb, gt, n_test, networks, opt):
+    netE, lstm = networks
+    netE.eval()
+    lstm.eval()
+
+    # glr_vec = lstm(fg_glr)[1].detach().cpu().numpy()
+
+    fd_glr = [netE(glr[i].cuda())[1] for i in range(len(glr))]
+    # fg_pb = torch.stack(fg_pb, 0).view(len(fg_pb), -1, opt.fg_dim)
+    fg_glr = lstm(fd_glr)[1].detach().cpu().numpy()
+
+    fs_glr = [netE(glr[i].cuda())[0][:, :128] for i in range(len(glr))]
+    fs_glr = torch.stack(fs_glr, 0).mean(dim=0).detach().cpu().numpy()
+    # fsd_glr = np.concatenate((fs_glr, fg_glr), 1)
+
+    fd_prb = [netE(prb[i].cuda())[1] for i in range(len(prb))]
+    # fg_pb = torch.stack(fg_pb, 0).view(len(fg_pb), -1, opt.fg_dim)
+    fg_prb = lstm(fd_prb)[1].detach().cpu().numpy()
+
+    fs_prb = [netE(prb[i].cuda())[0][:, :128] for i in range(len(prb))]
+    fs_prb = torch.stack(fs_prb, 0).mean(dim=0).detach().cpu().numpy()
+    # fsd_prb = np.concatenate((fs_prb, fg_prb), 1)
+
+    obj_arr = np.zeros((len(fg_prb), n_test), dtype=np.float32)
+    for i in range(n_test):
+        for j in range(len(fg_prb)):
+            cs1 = calculate_cosine_similarity(fg_glr[i:i + 1, :],
+                                             fg_prb[j:j + 1, :])
+            cs2 = calculate_cosine_similarity(fs_glr[i:i + 1, :],
+                                              fs_prb[j:j + 1, :])
+            obj_arr[j, i] = (cs1+cs2)/2
+    fpr, tpr, roc_auc = process_confusion_matrix(obj_arr, n_test, gt)
+    return find_idx(fpr, tpr) #, obj_arr
+
 
 def eval_cmc(glr, prb, networks, opt, glr_views, prb_views, is_same_view):
     netE, lstm = networks

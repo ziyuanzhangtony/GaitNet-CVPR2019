@@ -65,7 +65,7 @@ train_structure = {
 
 test_structure = {
     'gallery': (list(range(0,180+1,18)), ['nm'], [1,2,3,4]),
-    'probe': ([0,54,90,126], ['bg'], [1,2]),
+    'probe': (list(range(0,180+1,18)), ['bg'], [1,2]),
 }
 
 torch.cuda.set_device(opt.gpu)
