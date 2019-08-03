@@ -1,0 +1,1 @@
+ALL to ALL training might be better than ALL to 90
