@@ -10,7 +10,7 @@ from utils.dataloader import CASIAB
 from utils.compute import *
 import torch.backends.cudnn as cudnn
 from torch.utils.tensorboard import SummaryWriter
-from utils.modules_casiab_cvpr2_tab2 import *
+from utils.modules_casiab_cvpr2_tab2_lstm_last import *
 from utils.dataloader import get_training_batch
 from utils.graph import *
 
@@ -52,7 +52,7 @@ parser.add_argument('--signature', default='CVPR'
                                            '-test_len_50'
                                            '-with_factor'
                                            '-hgs_hgd_from_ha'
-                                           '-test')
+                                           '-lstm_last')
 opt = parser.parse_args()
 print(opt)
 print("Random Seed: ", opt.seed)
@@ -337,8 +337,8 @@ while True:
             netD.eval()
             netE.eval()
             lstm.eval()
-            scores_cmc_cl_train, _ = eval_cmc_two(train_eval[0], train_eval[1],[netE, lstm], opt, [90], [90], True)
-            scores_cmc_cl_test, _ = eval_cmc_two(test_eval[0], test_eval[1], [netE, lstm], opt, [90], [90], True)
+            scores_cmc_cl_train, _ = eval_cmc_two(train_eval[0], train_eval[1],[netE, lstm], opt, [90], [90], True, 1,1)
+            scores_cmc_cl_test, _ = eval_cmc_two(test_eval[0], test_eval[1], [netE, lstm], opt, [90], [90], True, 1,1)
             write_tfboard(scores_cmc_cl_train, itr, name='train_accu_rank1_cl')
             write_tfboard(scores_cmc_cl_test, itr, name='test_accu_rank1_cl')
 
@@ -349,7 +349,7 @@ while True:
                         'netE': netE.state_dict(),
                         'lstm': lstm.state_dict(),
                     },
-                        '%s/modules/%s/%d_%d.pickle' % (opt.savedir, opt.signature, itr, int(scores_cmc_cl_test[0]*100)), )
+                        '%s/modules/%s/%d_%d.pickle' % (opt.savedir, opt.signature, itr, int(scores_cmc_cl_test[0]*100)))
                     max_test_acc = scores_cmc_cl_test[0]
             else:
                 if scores_cmc_cl_test[0] >= 0.9:
@@ -362,7 +362,7 @@ while True:
                         opt.savedir, opt.signature, itr, int(scores_cmc_cl_test[0] * 100)), )
                     max_test_acc = scores_cmc_cl_test[0]
 
-            plot_anology(test_analogy_row, test_analogy_col,0,[netE,netD],opt, writer)
+            # plot_anology(test_analogy_row, test_analogy_col,0,[netE,netD],opt, writer)
 
             print()
             print(itr)
