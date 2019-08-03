@@ -249,9 +249,9 @@ def analogy_interpolation_pami(data1, data2, networks, opt):
 
 
 def plot_anology(row, col, itr, networks, opt, writer):
-    # im1 = analogy_corss_subjects_pami(row,col,networks, opt)
-    # im2 = analogy_one_subject_pami(col,networks, opt)
-    im3 = analogy_interpolation_pami(row, col,networks, opt)
+    im1 = analogy_corss_subjects_pami(row,col,networks, opt)
+    im2 = analogy_one_subject_pami(col,networks, opt)
+    # im3 = analogy_interpolation_pami(row, col,networks, opt)
 
     # anology2 = analogy_ha_hg_diff_subjects(test, networks, opt)
     # all = torch.cat([anology1, anology2], dim=1)
