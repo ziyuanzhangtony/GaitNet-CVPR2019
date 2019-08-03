@@ -3,7 +3,7 @@ import os
 import numpy as np
 import torch
 from torchvision import transforms
-from scipy.misc import imread
+from imageio import imread
 from keras.preprocessing.sequence import pad_sequences
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ from torch.autograd import Variable
 from torch.utils.data import DataLoader
 import itertools
 import scipy.io as sio
-from tensorboardX import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
 from scipy.stats import itemfreq
 
 class CASIAB(object):
@@ -511,7 +511,7 @@ parser.add_argument('--gpu', type=int, default=gpu_num)
 parser.add_argument('--siter', type=int, default=0, help='number of itr to start with')
 parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
 parser.add_argument('--data_root',
-                     default='/home/tony/Research/CASIAB-OLD-RGB-BS/',
+                     default='/home/tony/Research/CB-SEG-BS/',
                     # default='/media/tony/MyBook-MSU-CVLAB/CASIA/DatasetB/seg_rgb_mrcnn/',
                     # default='/user/zhang835/link2cvl-tony/CASIAB-OLD-RGB-BS',
                      help='root directory for data')
@@ -561,15 +561,16 @@ if opt.siter is not 0:
     lstm.load_state_dict(checkpoint['lstm'])
     clfer.load_state_dict(checkpoint['clf'])
     print('model loadinged successfully')
-# optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
-# optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
-# optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
-# optimizerClfer = optim.Adam(clfer.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
 
-optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999))
-optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999))
-optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
-optimizerClfer = optim.Adam(clfer.parameters(), lr=opt.lr, betas=(0.9, 0.999))
+optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
+optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
+optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
+optimizerClfer = optim.Adam(clfer.parameters(), lr=opt.lr, betas=(0.9, 0.999),weight_decay=0.001)
+
+# optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999))
+# optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999))
+# optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
+# optimizerClfer = optim.Adam(clfer.parameters(), lr=opt.lr, betas=(0.9, 0.999))
 
 mse_loss = nn.MSELoss()
 bce_loss = nn.BCELoss()

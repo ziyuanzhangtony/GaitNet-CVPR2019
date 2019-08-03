@@ -9,7 +9,7 @@ from utils.dataloader import CASIAB
 from utils.compute import *
 import torch.backends.cudnn as cudnn
 from torch.utils.tensorboard import SummaryWriter
-from utils.modules_casiab_tab2_test import *
+from utils.modules_casiab_cvpr_tab2_test import *
 from utils.dataloader import get_training_batch
 #################################################################################################################
 # HYPER PARAMETERS INITIALIZING

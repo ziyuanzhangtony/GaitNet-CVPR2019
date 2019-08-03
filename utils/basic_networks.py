@@ -6,6 +6,7 @@ class vgg_layer(nn.Module):
         self.main = nn.Sequential(
                 nn.Conv2d(nin, nout, 3, 1, 1),
                 nn.BatchNorm2d(nout),
+                # nn.ReLU()
                 nn.LeakyReLU(0.2)
                 )
 
