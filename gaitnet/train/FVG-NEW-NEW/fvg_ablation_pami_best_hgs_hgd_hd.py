@@ -142,9 +142,7 @@ optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
 schedulerE = torch.optim.lr_scheduler.StepLR(optimizerE,500,0.9,)
 schedulerD = torch.optim.lr_scheduler.StepLR(optimizerD,500,0.9)
 schedulerLSTM = torch.optim.lr_scheduler.StepLR(optimizerLstm,500,0.9)
-# optimizerE = optim.Adam(netE.parameters(), lr=opt.lr, betas=(0.9, 0.999))
-# optimizerD = optim.Adam(netD.parameters(), lr=opt.lr, betas=(0.9, 0.999))
-# optimizerLstm = optim.Adam(lstm.parameters(), lr=opt.lr, betas=(0.9, 0.999))
+
 
 mse_loss = nn.MSELoss()
 cse_loss = nn.CrossEntropyLoss()
@@ -186,9 +184,6 @@ test_loader = DataLoader(test_data,
                          drop_last=False,
                          pin_memory=True)
 testing_batch_generator = get_training_batch(test_loader)
-# #################################################################################################################
-
-
 #################################################################################################################
 
 def write_tfboard(vals,itr,name):
@@ -257,13 +252,13 @@ def train_main(Xa, Xb, l):
         hgs_loss += mse_loss(ha_a0[:,:128], ha_a1[:,:128])
         hgs_loss += mse_loss(ha_a1[:,:128], ha_b1[:,:128])
         hgs_loss += cse_loss(netE.fgs_clf(ha_a0[:,:128]),l)
-    self_rec_loss /= len(Xa)
-    self_rec_loss*=2000
+    # self_rec_loss /= len(Xa)
+    # self_rec_loss*=2000
 
     hgs_loss/=len(Xa)
-    hgs_loss*=0.25
-    # hgs_loss *= 10
-
+    # hgs_loss*=0.25
+    hgs_loss *= 0.1
+    # hgs_loss /= 10
 
     hgd_a = torch.stack(hgd_a)
     hgd_a = hgd_a.mean(dim=0)
@@ -272,7 +267,7 @@ def train_main(Xa, Xb, l):
     hgd_b = hgd_b.mean(dim=0)
 
     hgd_loss = mse_loss(hgd_a, hgd_b)
-    hgd_loss *= 10
+    hgd_loss *= 0.1
 
 
     hgs_a = []
@@ -293,7 +288,7 @@ def train_main(Xa, Xb, l):
 
 
     cse /= opt.clip_len # mean
-    # cse *= 0.1
+    cse *= 0.1
 
 
     loss = self_rec_loss + hgd_loss + cse + hgs_loss

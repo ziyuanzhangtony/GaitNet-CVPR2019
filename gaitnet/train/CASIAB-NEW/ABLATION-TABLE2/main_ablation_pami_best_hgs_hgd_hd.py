@@ -136,7 +136,7 @@ netD.apply(init_weights)
 lstm.apply(init_weights)
 
 if loading_model_path:
-    checkpoint = torch.load(loading_model_path)
+    checkpoint = torch.load(loading_model_path,'cuda:'+str(gpu_num))
     netE.load_state_dict(checkpoint['netE'])
     netD.load_state_dict(checkpoint['netD'])
     lstm.load_state_dict(checkpoint['lstm'])
