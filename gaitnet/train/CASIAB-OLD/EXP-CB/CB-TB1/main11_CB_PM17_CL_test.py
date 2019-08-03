@@ -24,6 +24,8 @@ import itertools
 import scipy.io as sio
 from torch.utils.tensorboard import SummaryWriter
 from scipy.stats import itemfreq
+import matplotlib.pyplot as plt
+import numpy as np
 
 class CASIAB(object):
 
@@ -508,7 +510,7 @@ class lstm(nn.Module):
 parser = argparse.ArgumentParser()
 gpu_num = int(input('Tell me the gpu you wanna use for this experiment:'))
 parser.add_argument('--gpu', type=int, default=gpu_num)
-parser.add_argument('--siter', type=int, default=0, help='number of itr to start with')
+parser.add_argument('--siter', type=int, default=4200, help='number of itr to start with')
 parser.add_argument('--lr', default=0.0001, type=float, help='learning rate')
 parser.add_argument('--data_root',
                      default='/home/tony/Research/CB-SEG-BS/',
@@ -530,8 +532,8 @@ parser.add_argument('--glr_views',type=list, default=list(range(0, 180 + 1, 18))
 parser.add_argument('--prb_views',type=list, default=[0,54,90,126], help='')
 
 import datetime
-time_now = str(datetime.datetime.now())
-# time_now = '2018-11-07 11:13:23.782672'
+# time_now = str(datetime.datetime.now())
+time_now = '2019-07-10 11:56:53.423818'
 parser.add_argument('--signature', default=time_now)
 parser.add_argument('--savedir', default='../runs')
 opt = parser.parse_args()
@@ -708,6 +710,15 @@ def eval_lstm_cmc(glr, prb):
                     score.append(calculate_identication_rate_single(gv, pv[i], id_range)[0])
                 score = sum(score) / float(len(score))
                 scores_this_pv.append(score)
+
+        y_pos = np.arange(len(scores_this_pv))
+        plt.bar(y_pos, scores_this_pv, align='center', alpha=0.5)
+        # plt.xticks(y_pos, objects)
+        # plt.ylabel('Usage')
+        # plt.title('Programming language usage')
+
+        plt.show()
+
         scores_this_pv = sum(scores_this_pv) / float(len(scores_this_pv))
         scores_all.append(scores_this_pv)
     return scores_all
@@ -842,50 +853,15 @@ def train_lstm(x_n,x_c,x_mx,l):
 # FUN TRAINING TIME !
 train_eval = test_data.get_eval_data(True)
 test_eval = test_data.get_eval_data(False)
-writer = SummaryWriter('%s/logs/%s'%(opt.savedir,opt.signature))
 itr = opt.siter
-while True:
-    netE.train()
-    netD.train()
-    lstm.train()
-    clfer.train()
 
-    im_nm, im_cl,im_mx,lb = next(training_batch_generator1)
-    print(lb)
-
-    losses1 = train_main(im_nm, im_cl,im_mx,lb)
-    write_tfboard(losses1,itr,name='EDLoss')
-    #
-    # losses3 = train_main2(im_nm, im_cl,lb,itr)
-    # write_tfboard(losses3, itr, name='HAHALoss')
-
-    losses3 = train_lstm(im_nm,im_cl,im_mx,lb)
-    write_tfboard(losses3, itr, name='LstmLoss')
-
-    print(itr)
-
-    # ----------------EVAL()--------------------
-    if itr % 5 == 0:
-        # with torch.no_grad():
-        netD.eval()
-        netE.eval()
-        lstm.eval()
-        clfer.eval()
-        scores_cmc_cl = eval_lstm_cmc(train_eval[0], train_eval[1])
-        write_tfboard(scores_cmc_cl, itr, name='train_accu_rank1_cl')
-        scores_cmc_cl = eval_lstm_cmc(test_eval[0], test_eval[1])
-        write_tfboard(scores_cmc_cl, itr, name='test_accu_rank1_cl')
-
-        # ----------------SAVE MODEL--------------------
-    if itr % 200 == 0:
-        torch.save({
-            'netD': netD.state_dict(),
-            'netE': netE.state_dict(),
-            'lstm':lstm.state_dict(),
-            'clf':clfer.state_dict()
-            },
-            '%s/modules/%s/%d.pickle'%(opt.savedir,opt.signature,itr),)
-
-    itr+=1
+netD.eval()
+netE.eval()
+lstm.eval()
+clfer.eval()
+scores_cmc_cl = eval_lstm_cmc(train_eval[0], train_eval[1])
+# write_tfboard(scores_cmc_cl, itr, name='train_accu_rank1_cl')
+scores_cmc_cl = eval_lstm_cmc(test_eval[0], test_eval[1])
+# write_tfboard(scores_cmc_cl, itr, name='test_accu_rank1_cl')
 
 

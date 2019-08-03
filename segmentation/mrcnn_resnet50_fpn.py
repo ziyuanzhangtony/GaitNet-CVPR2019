@@ -79,11 +79,16 @@ class MRCNN():
         box = [int(e) for e in box]
         x0, y0, x1, y1 = box
         x_c = (x0 + x1) // 2
-        height = y1 - y0
+        y_c = (y0 + y1) // 2
+
+        height = int((y1 - y0)*1.5)
+
         if height % 2 != 0:
             height += 1
         width = height // 2
-        return frame[:,y0:y0+height, x_c - width // 2:x_c - width // 2 + width] # maybe empty if subject too close to boundry
+        return frame[:,
+               y_c - height // 2:y_c - height // 2 + height,
+               x_c - width // 2:x_c - width // 2 + width] # maybe empty if subject too close to boundry
 
     def process_batch(self,batch,threshold,top_num,out_of_frame_space, dataset):
         result_filtered = []
