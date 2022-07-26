@@ -2,8 +2,6 @@
 
 http://cvlab.cse.msu.edu/pdfs/Zhang_Tran_Yin_Atoum_Liu_Wan_Wang_CVPR2019.pdf
 
-[cropped images](https://drive.google.com/open?id=1nYhhToxjdRp4XFyOIynqVzVxKOcS2FYo) to run GaitNet.
-
 ## Prerequisites
 
 - Linux/ Windows
